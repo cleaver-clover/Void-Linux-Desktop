@@ -465,7 +465,7 @@ This will set up a Nix environment on your computer.
 (logout and login or reboot to use nix)
 $ nix-channel --add https://nixos.org/channels/nixos-25.05 nixpkgs
 $ nix-channel --update 
-# ln -s ~/.nix-profile/share/applications ~/.local/share/applications
+# ln -s ~/.nix-profile/share/applications ~/.local/share/applications/nix
 ```
 
 Basic usage:
@@ -504,8 +504,8 @@ This can be usefull in some cases where apps present issue with other pkg manage
 To set it up run:
 
 ```
-$ mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman
-$ wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman
+$ mkdir .local/share/AppMan
+$ mkdir -p ~/.local/bin && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman
 ```
 
 This lines are explained in detail here 

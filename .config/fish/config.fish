@@ -23,4 +23,4 @@ function upgrade-system
 end
 
 #----------- PATH -----------
-export PATH="$PATH:$HOME/.local/bin"
+export PATH=$PATH:$(xdg-user-dir USER)/.local/bin
