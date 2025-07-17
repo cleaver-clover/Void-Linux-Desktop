@@ -1,7 +1,7 @@
 // made by https://github.com/khuedoan/slock
 /* user and group to drop privileges to */
-static const char *user  = "arega";
-static const char *group = "arega";
+static const char *user  = "clover";
+static const char *group = "clover";
 
 static const char *colorname[NUMCOLS] = {
 	[INIT] =   "#000000",   /* after initialization */
