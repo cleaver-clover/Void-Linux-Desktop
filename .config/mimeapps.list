@@ -1,37 +1,10 @@
 [Default Applications]
 text/plain=codium.desktop
-text/x-lua=nix-env-applications-codium.desktop
-application/x-shellscript=codium.desktop
-text/x-chdr=nix-env-applications-codium.desktop
-x-scheme-handler/http=userapp-Firefox-L42192.desktop
-x-scheme-handler/https=userapp-Firefox-L42192.desktop
-x-scheme-handler/chrome=userapp-Firefox-L42192.desktop
-text/html=userapp-Firefox-L42192.desktop
-application/x-extension-htm=userapp-Firefox-L42192.desktop
-application/x-extension-html=userapp-Firefox-L42192.desktop
-application/x-extension-shtml=userapp-Firefox-L42192.desktop
-application/xhtml+xml=userapp-Firefox-L42192.desktop
-application/x-extension-xhtml=userapp-Firefox-L42192.desktop
-application/x-extension-xht=userapp-Firefox-L42192.desktop
-application/pdf=org.pwmt.zathura.desktop
-image/jpeg=nsxiv.desktop
-text/markdown=marktext.desktop
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
 
 [Added Associations]
-text/plain=Vscodium.desktop;nix-env-codium.desktop;nix-env-applications-codium.desktop;codium.desktop;
-text/x-lua=nix-env-applications-codium.desktop;
-application/x-shellscript=nix-env-applications-codium.desktop;codium.desktop;
-text/x-chdr=nix-env-applications-codium.desktop;
-x-scheme-handler/http=userapp-Firefox-L42192.desktop;
-x-scheme-handler/https=userapp-Firefox-L42192.desktop;
-x-scheme-handler/chrome=userapp-Firefox-L42192.desktop;
-text/html=userapp-Firefox-L42192.desktop;
-application/x-extension-htm=userapp-Firefox-L42192.desktop;
-application/x-extension-html=userapp-Firefox-L42192.desktop;
-application/x-extension-shtml=userapp-Firefox-L42192.desktop;
-application/xhtml+xml=userapp-Firefox-L42192.desktop;
-application/x-extension-xhtml=userapp-Firefox-L42192.desktop;
-application/x-extension-xht=userapp-Firefox-L42192.desktop;
-application/pdf=org.pwmt.zathura.desktop;
-image/jpeg=nsxiv.desktop;
-text/markdown=nix-env-applications-marktext.desktop;marktext.desktop;
+text/plain=codium.desktop;
