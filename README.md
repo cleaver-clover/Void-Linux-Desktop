@@ -509,7 +509,7 @@ $ mkdir -p ~/.local/bin && wget https://raw.githubusercontent.com/ivan-hc/AM/mai
 ```
 
 This lines are explained in detail here 
-[AM-Application-Manager](https://github.com/mshakan/AM-Application-Manager?tab=readme-ov-file#how-to-install-am)
+[AM-Application-Manager](https://github.com/ivan-hc/AM)
 
 Usage:
 
