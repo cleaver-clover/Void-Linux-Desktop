@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Choses dunstrc final directory
+
+$HOME/.config/dunst/dunst-pywal/gendunstrc > $HOME/.config/dunst/dunstrc

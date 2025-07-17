@@ -1,0 +1,12 @@
+#!/bin/bash 
+while read file
+do         
+	case "$1" in
+        "d") 
+		sh ~/.config/scripts/set-wallpaper.sh "$file" ;;
+		"r") 
+		sh ~/.config/scripts/set-rand-wallpaper.sh ;;
+#		"h") 
+#		sh ~/.config/scripts/set-wallpaper-hypr.sh "$file" ;;
+	esac
+done

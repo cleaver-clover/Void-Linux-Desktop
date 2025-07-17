@@ -1,0 +1,126 @@
+
+//    Costom made rofi theme
+
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration{
+    display-drun:           "";
+    font:                   "JetBrains Mono 13";
+    drun-display-format:    "{icon}{name}";
+    show-icons:             true;
+    //icon-theme:           ;
+}
+
+window {
+    width:            35%;
+    height:           35%;
+    padding:          20;
+    text-color:       @foreground;
+    background-color: @background;
+    border:           2px;
+    border-color:     @foreground;
+    border-radius:    6px;
+    location:         center;
+    anchor:           center;
+    x-offset:         0px; 
+    y-offset:         0px;
+}
+
+mainbox {
+    children:         [ inputbar, listview ];
+    background-color: @background;
+    text-color:       @foreground;
+    padding:          0px;
+    border:           0px;
+    border-color:     @border-color;
+    border-radius:    0px 0px 0px 0px;
+}
+
+prompt {
+    padding:          @padding;
+    text-color:       @foreground;
+    background-color: @inptut-color;
+}
+
+entry {
+    padding:          @padding;
+    text-color:       @foreground;
+    background-color: @inptut-color;
+    placeholder:      "Search...";
+//  placeholder-color: inherit;
+}
+
+inputbar {
+    children:         [ prompt, entry ];
+    padding:          12px;
+    border:           0 0 0;
+    text-color:       @foreground;
+    background-color: @inptut-color;
+    border-color:     @inptut-color;
+}
+
+listview {
+    columns:          1;
+    padding:          @padding;
+    cycle:            false;
+    dynamic:          true;
+    layout:           vertical;
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+
+scrollbar {     
+    handle-width:     6px ;     
+    handle-color:     @foreground;     
+    border-radius:    6px;     
+    background-color: @background; 
+} 
+
+element {
+    text-color:       @foreground;
+    background-color: @background;
+    spacing:          10px;
+    margin:           0px;
+    padding:          6px 12px;
+    border:           0px;
+    border-radius:    6px;
+}
+
+element-icon {
+    padding:          0 4 0;
+    text-color:       inherit;
+    background-color: inherit;
+}
+
+element-text {
+    text-color:       inherit;
+    background-color: inherit;
+}
+
+element normal.urgent, element alternate.urgent {
+    text-color:       inherit;
+    background-color: inherit;
+}
+
+element normal.active, element alternate.active {
+    text-color:       inherit;
+    background-color: inherit;
+}
+
+element selected {
+    text-color:       @selected-foreground;
+    background-color: @selected-background;
+}
+
+element selected.urgent {
+    text-color:       @selected-foreground;
+    background-color: @selected-background;
+}
+
+element selected.active {
+    text-color:       @selected-foreground;
+    background-color: @selected-background;
+}
+
+// vim:ft=css

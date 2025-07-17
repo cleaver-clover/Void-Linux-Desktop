@@ -1,0 +1,70 @@
+
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration{
+    display:           "";
+}
+
+@theme "~/.config/rofi/config.rasi"
+
+inputbar {
+  children: [entry];
+}
+
+configuration{
+    font:                   "JetBrains Mono 16";
+}
+
+window {
+    width:            20;
+    height:           20;
+    padding:          490; //495
+    text-color:       @foreground;
+    fullscreen:       true;
+    border:           0px;
+    transparency:     "background";
+    background-color: @background;
+    background-image: url("~/.wallpapers/blured_wallpaper", both);
+}
+
+mainbox {
+    width:            50;
+    height:           50;
+    children:         [ listview ];
+    background-color: @background;
+    text-color:       @foreground;
+    padding:          0px;
+    border:           2px;
+    border-color:     @foreground;
+    border-radius:    12px;
+}
+
+listview {
+    columns:          1;
+    padding:          16;
+    cycle:            false;
+    dynamic:          true;
+    layout:           horizontal;
+    spacing:          54px;
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element {
+    text-color:       @foreground;
+    background-color: @background;
+    spacing:          3px;
+    margin:           0px;
+    padding:          15px 30px 15px 5px;
+    border:           0px;
+    border-radius:    6px;
+}
+
+
+listview {	
+    scrollbar:        false;
+}
+
+inputbar {
+    enabled:          false;
+}

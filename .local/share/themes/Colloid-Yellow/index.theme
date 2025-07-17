@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Colloid-Yellow
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Colloid-Yellow
+MetacityTheme=Colloid-Yellow
+IconTheme=Colloid-Yellow
+CursorTheme=Colloid-cursors
+ButtonLayout=close,minimize,maximize:menu

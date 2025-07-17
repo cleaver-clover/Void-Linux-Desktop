@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Choses final directory for zathurarc
+
+$HOME/.config/zathura/zathura-pywal/genzathurarc > $HOME/.config/zathura/zathurarc
