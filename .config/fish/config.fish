@@ -21,3 +21,6 @@ function upgrade-system
     nix-env -u 
     #flatpak missing
 end
+
+#----------- PATH -----------
+export PATH="$PATH:$HOME/.local/bin"

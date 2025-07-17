@@ -411,7 +411,7 @@ $ xdg-user-dirs-update <user_name>       -> create user directories
 (browsers)
 # xbps-install chromium firefox
 (development)
-# xbps-install pycharm git tree 
+# xbps-install pycharm git tree wget
 (music players)
 # xbps-install mpd mpc rmpc
 
@@ -494,6 +494,35 @@ To manage Flatpak permissions, install Flatseal:
 
 ```
 $ flatpak install flathub com.github.tchx84.Flatseal
+```
+
+#### AM Application Manager
+
+AM Application Manager is a set of scripts to manage App Images.
+This can be usefull in some cases where apps present issue with other pkg managers.
+
+To set it up run:
+
+```
+$ mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman
+$ wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman
+```
+
+This lines are explained in detail here 
+[AM-Application-Manager](https://github.com/mshakan/AM-Application-Manager?tab=readme-ov-file#how-to-install-am)
+
+Usage:
+
+```
+appman -l               -> lists all pgks
+appman -q <pkg_name>    -> search for pkg
+appman -i <pkg_name>    -> installs pkg
+appman -ia <pkg_name>   -> installs appimage pkg
+appman -u               -> uppdate
+appman -r <pkg_name>    -> removes pkg
+appman --icons --all    -> add icons to all pkgs
+appman -c               -> removes all the unnecessary files and folders
+appman -f               -> list all installed programs
 ```
 
 ### Hardend Firefox
