@@ -19,8 +19,22 @@ function upgrade-system
     echo "---- Upgrading nix ----" 
     nix-channel --update &&
     nix-env -u 
-    #flatpak missing
+    echo "---- Upgrading flatpak ----" 
+    flatpak update
+    echo "---- Upgrading appmanager ----" 
+    appman -u
 end
+
+
+function clean-system
+    echo "---- cleaning void ----"
+    sudo xbps-remove -o &&
+    echo "---- Upgrading flatpak ----" 
+    flatpak uninstall --unused
+    echo "---- Upgrading appmanager ----" 
+    appman -c
+end
+
 
 #----------- PATH -----------
 export PATH=$PATH:$(xdg-user-dir USER)/.local/bin
