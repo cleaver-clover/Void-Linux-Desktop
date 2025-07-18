@@ -125,7 +125,7 @@ static const Key keys[] = {
 	{ MODKEY,						XK_w, 	   spawn,			SHCMD("~/.config/scripts/nsxiv.sh") },
 	{ MODKEY,						XK_p, 	   spawn,			SHCMD("flameshot gui") },
 	{ 0,							XK_Print,  spawn,           SHCMD("flameshot gui") },
-	{ MODKEY|Mod1Mask,				XK_b, 	   spawn,           SHCMD("firefox") },
+	{ MODKEY|Mod1Mask,				XK_b, 	   spawn,           SHCMD("librewolf") },
 	{ MODKEY|Mod1Mask,				XK_l, 	   spawn,           SHCMD("logseq") },
 	{ MODKEY|Mod1Mask,				XK_k, 	   spawn,           SHCMD("keepassxc") },
 	{ MODKEY|Mod1Mask,				XK_n, 	   spawn,           SHCMD("nemo") },

@@ -399,8 +399,6 @@ $ xdg-user-dirs-update              -> create user directories
 # xbps-install lxappearance qt5ct qt6ct
 (usefull)
 # xbps-install timeshift flameshot keepassxc engrampa syncthing gparted
-(browsers)
-# xbps-install chromium firefox
 (development)
 # xbps-install pycharm git tree wget
 (music players)
@@ -419,6 +417,7 @@ $ sudo ln -s ~/.cache/wal/colors.Xresources ~/.Xresources
 # xbps-install chrony
 # ln -s /etc/sv/chronyd/ /var/service/
 ```
+
 To compile suckuless utilities enter the `dwm` and `slock` directories and run:
 
 ```
@@ -523,11 +522,11 @@ arkenfox/user.js: Firefox privacy, security and anti-tracking: a
 comprehensive user.js template for configuration and hardening](https://github.com/arkenfox/user.js)
 
 In Void Linux, we can set up LibreWolf or other similar browsers 
-through Flatpak or Nix. 
+through Flatpak, Nix or as an appImage. 
 The issue is that some features become hard to set, like password 
 manager integration.
 If this is not an issue for you, I recommend using LibreWolf with 
-Flatpak. It is the best option if the browser doesn't interact with 
+Flatpak or as an appImage. It is the best option if the browser doesn't interact with 
 other applications.
 
 To install it, download the repo as a zip (this does not download 
