@@ -236,18 +236,20 @@ Exit and unmount partitions
 # umount -R /mnt
 ```
 
-Now you can reboot the system or continue the installation process.
+Now you can reboot the system.
 
 ## Seting up desktop
 
-If you did not reboot, you need to be in the chroot environment. **Do not enable services in the chroot environment.** Also, **I don't recommend setting symlinks in this environment.**
+After rebooting we can set up the system.
 
 ### Enable internet connection
 
 See also: [Eduroam with NetworkManager](https://docs.voidlinux.org/config/network/networkmanager.html#eduroam-with-networkmanager)
 
+DBus is the base for alot of services including NetworkManager.
+
 Using NetworkManager (**make sure any other networking services like dhcpcd are not running**):
-Can edit connections with `nmtui`
+Can edit connections with `nmtui`.
 
 ```
 # ln -s /etc/sv/dbus/ /var/service/
@@ -286,17 +288,6 @@ Save and exit the file and update `resolv.conf` with:
 ```
 # ping gnu.org
 # xbps-install -Su
-```
-
-### Enable dbus
-
-[Session and Seat Management](https://docs.voidlinux.org/config/session-management.html#session-and-seat-management)
-
-There are a lot of services that depend on this, so it's better to set it up in the beginning.
-
-```
-# xbps-install dbus
-# ln -s /etc/sv/dbus/ /var/service/
 ```
 
 ### Nvidia GPU
@@ -396,8 +387,8 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 # xbps-install base-devel libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 
 -- setup desktop
-# xbps-install setxkbmap xrandr xclip xsetroot startx gammastep xautolock xdg-user-dirs elogind polkit-gnome setroot
-$ xdg-user-dirs-update <user_name>       -> create user directories
+# xbps-install setxkbmap xrandr xclip xsetroot gammastep xautolock xdg-user-dirs elogind polkit-gnome setroot
+$ xdg-user-dirs-update              -> create user directories
 (control brightness on laptops)
 # xbps-install brightnessctl
 
@@ -418,7 +409,7 @@ $ xdg-user-dirs-update <user_name>       -> create user directories
 -- sensors for dwm bar
 # xbps-install lm_sensors
 (on laptops to manage batery usage)
-# ln -s /etc/sv/acpid/ /var/service/
+# xbps-install acpi
 
 -- pywal setup
 # sudo xbps-install pywal
