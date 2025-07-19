@@ -37,4 +37,4 @@ end
 
 
 #----------- PATH -----------
-export PATH=$PATH:$(xdg-user-dir USER)/.local/bin
+export PATH="$PATH:$HOME/.local/bin" # needed for appman

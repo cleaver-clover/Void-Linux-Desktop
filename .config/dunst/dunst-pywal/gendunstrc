@@ -9,7 +9,7 @@ cat <<CONF
     ### Display ###
 
     monitor = 0
-    follow = none
+    follow = mouse
 
     width = (200, 350)
     height = (20,500)

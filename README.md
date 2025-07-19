@@ -390,7 +390,9 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 # xbps-install setxkbmap xrandr xclip xsetroot gammastep xautolock xdg-user-dirs elogind polkit-gnome setroot
 $ xdg-user-dirs-update              -> create user directories
 (control brightness on laptops)
-# xbps-install brightnessctl
+# xbps-install brillo
+(control displays)
+# xbps-install arandr
 
 -- other desktop applications
 (basic)
@@ -494,6 +496,7 @@ This can be usefull in some cases where apps present issue with other pkg manage
 To set it up run:
 
 ```
+$ sudo xbps-install curl
 $ mkdir .local/share/AppMan
 $ mkdir -p ~/.local/bin && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman
 ```
@@ -514,24 +517,6 @@ appman --icons --all    -> add icons to all pkgs
 appman -c               -> removes all the unnecessary files and folders
 appman -f               -> list all installed programs
 ```
-
-### Hardend Firefox
-
-[GitHub - 
-arkenfox/user.js: Firefox privacy, security and anti-tracking: a 
-comprehensive user.js template for configuration and hardening](https://github.com/arkenfox/user.js)
-
-In Void Linux, we can set up LibreWolf or other similar browsers 
-through Flatpak, Nix or as an appImage. 
-The issue is that some features become hard to set, like password 
-manager integration.
-If this is not an issue for you, I recommend using LibreWolf with 
-Flatpak or as an appImage. It is the best option if the browser doesn't interact with 
-other applications.
-
-To install it, download the repo as a zip (this does not download 
-.git and other stuff we don't need) and copy the contents to the folder 
-of a desired profile at `~/.mozilla/firefox/<profile_folder>`. Then enable that profile at `about:profiles` in Firefox and restart it.
 
 ### Auto mount additional disks
 
@@ -557,6 +542,29 @@ Then we add this to `/etc/fstab` fstab (separate values with `tab`):
 # Media-Disk
 UUID=92c6b36e-ebcb-4a53-a2fb-b57eabf4d3d5    /media/Media-Disk    xfs    defaults    0    0
 ```
+
+### Steam on Void
+
+Steam needs access to 32-bit packages, so these are the installation commands:
+
+```
+# xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+# xbps-install -Su
+# xbps-install steam libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit mono mesa-32bit vulkan-loader mesa-dri-32bit
+
+```
+
+### Trackpad on laptops
+
+Trackpad configuration can be edited with the command `xinput`.
+these are some basic commands to use it:
+
+```
+$ xinput list                                   -> list peripherals
+$ xinput list-props <id>                        -> list properties
+$ xinput set-prop <id> <setting_id> <value>     -> edit value
+```
+[commandmasters xinput guide](https://commandmasters.com/commands/xinput-linux/)
 
 ### Optional Void repositories
 
