@@ -299,7 +299,7 @@ I prefer to use the proprietary driver, so the setup is the following:
 ```
 # xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
 # xbps-install -Su
-# xbps-install nvidia nvidia-libs-32bit mesa-dri
+# xbps-install nvidia nvidia-libs-32bit
 ```
 
 ### AMD GPU
@@ -550,8 +550,13 @@ Steam needs access to 32-bit packages, so these are the installation commands:
 ```
 # xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
 # xbps-install -Su
-# xbps-install steam libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit mono mesa-32bit vulkan-loader mesa-dri-32bit
+# xbps-install steam libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit
 
+```
+For AMD GPUs install the following pkgs:
+
+```
+# xbps-install mesa-32bit mesa-dri-32bit
 ```
 
 ### Trackpad on laptops
