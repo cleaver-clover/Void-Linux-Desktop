@@ -571,6 +571,19 @@ $ xinput set-prop <id> <setting_id> <value>     -> edit value
 ```
 [commandmasters xinput guide](https://commandmasters.com/commands/xinput-linux/)
 
+### VPN with Wireguard
+
+When using a VPN, WireGuard is easier to set up.
+
+```
+$ sudo xbps-install wireguard
+$ sudo mkdir -p /etc/wireguard
+$ sudo cp <wireguard_conf_name>.conf /etc/wireguard
+$ sudo wg-quick up <wireguard_conf_name>        -> enable connectio
+$ sudo wg show                                  -> verify connection
+$ sudo wg-quick down <wireguard_conf_name>      -> disable connection
+```
+
 ### Optional Void repositories
 
 Some repos are needed to install nonfree and 32-bit packages:
