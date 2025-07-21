@@ -387,7 +387,7 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 # xbps-install base-devel libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 
 -- setup desktop
-# xbps-install setxkbmap xrandr xclip xsetroot gammastep xautolock xdg-user-dirs elogind polkit-gnome setroot
+# xbps-install setxkbmap xrandr xclip xsetroot gammastep xautolock xdg-user-dirs elogind polkit-gnome setroot numlockx
 $ xdg-user-dirs-update              -> create user directories
 (control brightness on laptops)
 # xbps-install brillo

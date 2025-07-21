@@ -8,6 +8,9 @@ setroot $HOME/.wallpapers/current_wallpaper &
 ## setkeyboard ##
 setxkbmap pt &
 
+## numblock enable ##
+numlockx &
+
 ## run applications ##
 pipewire & 
 syncthing --no-browser &

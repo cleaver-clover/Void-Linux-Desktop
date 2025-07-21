@@ -60,11 +60,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     	NULL,       NULL,       0,            0,           0 },
-	{ "keepassxc",  NULL,       NULL,       0,            0,           9 },
-	{ "nemo",  		NULL,       NULL,       0,            0,           8 },
-
+	/* class      		instance    title       	tags mask     isfloating   	monitor 	float x,y,w,h         floatborderpx*/
+//	{ "Gimp",     		NULL,       NULL,       	0,            0,           	-1, 		50,50,750,500,        0 },
+//	{ "keepassxc",  	NULL,       NULL,       	0,            0,           	-1, 		50,50,750,500,        0 },
+//	{ "kitty",			NULL,     	NULL,       	0,            1,           	-1,			50,50,750,500,        0 },
+	{ "Qalculate-gtk",	NULL,		NULL,			0,            1,           	-1,			50,50,750,500,        0 },
 };
 
 /* layout(s) */
