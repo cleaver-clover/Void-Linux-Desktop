@@ -396,7 +396,7 @@ $ xdg-user-dirs-update              -> create user directories
 
 -- other desktop applications
 (basic)
-# xbps-install rofi neofetch nemo nsxiv picom dunst kitty fish-shell zathura zathura-pdf-poppler
+# xbps-install rofi neofetch nemo nsxiv picom dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
 (theme management gtk + qt)
 # xbps-install lxappearance qt5ct qt6ct
 (usefull)
