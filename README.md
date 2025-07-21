@@ -409,7 +409,7 @@ $ xdg-user-dirs-update              -> create user directories
 -- sensors for dwm bar
 # xbps-install lm_sensors
 (on laptops to manage batery usage)
-# xbps-install acpi
+# xbps-install upower
 
 -- pywal setup
 # sudo xbps-install pywal
