@@ -132,7 +132,7 @@ Copy the RSA keys from the installation medium to the target root directory.
 For EFI systems using the main glibc repo, this is the install command plus neovim to help edit some files, and dbus NetworkManager to access to an internet connection.
 
 ```
-# xbps-install -Sy -R https://repo-default.voidlinux.org/current -r /mnt base-system cryptsetup grub-x86_64-efi lvm2 neovim dbus NetworkManager
+# xbps-install -Sy -R https://repo-default.voidlinux.org/current -r /mnt base-system cryptsetup grub-x86_64-efi lvm2 neovim NetworkManager dbus dbus-glib
 ```
 
 Generate fstab (Filesystem Configuration).
