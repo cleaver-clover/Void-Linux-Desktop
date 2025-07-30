@@ -41,7 +41,7 @@ static const char *const autostart[] = {
 	//"sh", "-c", "~/.config/scripts/battery-level.sh", NULL,
 
 	/* Notification */
-	"dunstify","Hello World!!!", NULL,
+	//"dunstify","Hello World!!!", NULL,
 
 	NULL /* Terminate */
 };
