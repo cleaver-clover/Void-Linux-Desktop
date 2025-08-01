@@ -1,0 +1,1 @@
+To copy a qt6ct color.conf file to configure qt5ct colors there is need to remove the last color of eatch line.
