@@ -442,6 +442,25 @@ $ git clone <this_repo>
 $ cd .dotfiles
 $ stow .
 ```
+### Firewall
+All computers must have a firewall running.
+In this case (desktop/laptop workstation) there is no need to have a complex configuration, so I will use ufw.
+
+```
+$ sudo xbps-install ufw
+$ sudo ln -s /etc/sv/ufw/ /var/service/
+$ sudo ufw enable
+```
+Then reboot the system, and the firewall is configured.
+
+#### Firewall testing
+
+To teste the firewall you can use ``nmap`` on another machine.
+
+First, find the IP of the machine you want to scan by running ``$ ip a``.
+
+Then test the hole internet with ``$ sudo nmap -sS <ip>``, and look for open ports.
+
 
 ### Additional package managers
 
