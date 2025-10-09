@@ -9,7 +9,7 @@ end
 #--------- AT LAUNCH --------
 
 clear & 
-neofetch
+fastfetch
 
 #------ CUSTOM SCRIPTS ------
 
