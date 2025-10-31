@@ -12,7 +12,7 @@ setxkbmap pt &
 numlockx &
 
 ## run applications ##
-pipewire & 
+pipewire &
 syncthing --no-browser &
 picom &
 exec /usr/libexec/polkit-gnome-authentication-agent-1 &
@@ -25,7 +25,8 @@ mpd &
 
 ## autolock and suspend ##
 # (lock and suspend can be set in the same command -> "slock & loginctl suspend")
-xautolock -time 15 -locker "slock" -notify 180 -notifier "dunstify 'Locking system in 3 minutes!!'"  &
+xautolock -time 15 -locker "slock" -notify 120 -notifier "dunstify 'Locking system in 2 minutes!!'"  &
 #xautolock -time 20 -locker "loginctl suspend" &
 
+# Start dwm with dbus
 exec dbus-run-session dwm
