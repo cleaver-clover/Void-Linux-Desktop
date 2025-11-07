@@ -16,9 +16,11 @@ Hope to help some of you as well :)
 Date: jul/2025
 
 ### Demo:
-
+#### DWM
 ![Screen Shot 1](demo-images/screenshot-1.png "title")
 ![Screen Shot 2](demo-images/screenshot-2.png "title")
+#### Niri
+![Screen Shot 3](demo-images/Screenshot-wayland.png "title")
 
 ### References:
 
@@ -301,6 +303,10 @@ I prefer to use the proprietary driver, so the setup is the following:
 # xbps-install -Su
 # xbps-install nvidia nvidia-libs-32bit
 ```
+For **niri** to work this needs to be done:
+
+On `/etc/default/grub` add `nvidia-drm.modeset=1` to `GRUB_CMDLINE_LINUX_DEFAULT`. Then run `update-grub`.
+After this add `add_drivers+="nvidia nvidia-drm nvidia-modeset nvidia-uvm"` to a file `/etc/dracut.conf.d/nvidia.conf`. This file needs to be created.
 
 ### AMD GPU
 
@@ -370,6 +376,7 @@ if [[ $(tty) == /dev/tty1 ]]; then
     startx
 fi
 ```
+For **niri** add `dbus-run-session niri --session` instead of `startx`.
 
 ### Xorg with suckless dwm
 
@@ -377,7 +384,7 @@ Finally, we will set up the graphical environment with some extras
 that are needed by some applications to make sure everything works 
 properly.
 
-Don't forget to set **timeshift**  to back up your system after setting it all up.
+Niri with wayland instalation guide is next
 
 ```
 -- Xorg
@@ -387,29 +394,53 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 # xbps-install base-devel libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 
 -- setup desktop
-# xbps-install setxkbmap xrandr xclip xsetroot gammastep xautolock xdg-user-dirs elogind polkit-gnome setroot numlockx
-$ xdg-user-dirs-update              -> create user directories
+# xbps-install xrandr xclip xsetroot xautolock setroot numlockx
+
 (control brightness on laptops)
 # xbps-install brillo
 (control displays)
 # xbps-install arandr
 
--- other desktop applications
-(basic)
-# xbps-install rofi fastfetch nemo nsxiv mpv picom dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
-(theme management gtk + qt)
-# xbps-install lxappearance qt5ct qt6ct
-(usefull)
-# xbps-install timeshift flameshot keepassxc engrampa syncthing gparted
-(development)
-# xbps-install pycharm git tree wget
-(music players)
-# xbps-install mpd mpc rmpc
-
 -- sensors for dwm bar
 # xbps-install lm_sensors
 (on laptops to manage batery usage)
 # xbps-install upower
+
+-- theme management gtk + qt
+# xbps-install lxappearance qt5ct qt6ct
+```
+
+To compile suckuless utilities enter the `dwm` and `slock` directories and run:
+
+```
+# make clean install
+```
+
+### Wayland with niri wm
+
+To setup wayland with niri wm install the following programs.
+
+```
+# xbps-install wayland xorg-server-xwayland xwayland-satellite mesa-dri Waybar wlogout niri swaylock swww swayidle 
+
+-- For setting the gtk and qt themes
+# xbps-install nwg-look qt5ct qt6ct
+```
+
+### Other desktop apps
+
+Don't forget to set **timeshift**  to back up your system after setting it all up.
+
+```
+(basic)
+# xbps-install rofi fastfetch nemo nsxiv mpv picom dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
+
+(usefull)
+# xbps-install timeshift flameshot keepassxc engrampa syncthing gparted gammastep  elogind polkit-gnome setxkbmap
+(development)
+# xbps-install git tree wget
+(music players)
+# xbps-install mpd mpc rmpc
 
 -- pywal setup
 # sudo xbps-install pywal
@@ -418,12 +449,10 @@ $ sudo ln -s ~/.cache/wal/colors.Xresources ~/.Xresources
 -- chrony (synchronise the system clock with NTP servers) if needed
 # xbps-install chrony
 # ln -s /etc/sv/chronyd/ /var/service/
-```
 
-To compile suckuless utilities enter the `dwm` and `slock` directories and run:
-
-```
-# make clean install
+-- create user directories
+# xbps-install xdg-user-dirs
+$ xdg-user-dirs-update
 ```
 
 ### Stow
@@ -442,6 +471,8 @@ $ git clone <this_repo>
 $ cd .dotfiles
 $ stow .
 ```
+### 
+
 ### Firewall
 All computers must have a firewall running.
 In this case (desktop/laptop workstation) there is no need to have a complex configuration, so I will use ufw.
