@@ -3,7 +3,7 @@
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
- Autologin into WM
+# Autologin into WM
 if [[ $(tty) == /dev/tty1 ]]; then
     # startx
     dbus-run-session niri --session 
