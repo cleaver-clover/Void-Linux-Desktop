@@ -263,7 +263,8 @@ window-rule {
     opacity 0.94
 }
 
-window-rule {
+window-rule { 
+    match app-id=r#"chromium$"#
     match app-id=r#"librewolf$"#
     open-maximized true
 }
