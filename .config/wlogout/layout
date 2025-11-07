@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock & sleep 15s && niri msg action power-off-monitors ",
     "keybind" : "l"
 }
 {

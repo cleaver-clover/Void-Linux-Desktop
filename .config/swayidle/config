@@ -1,3 +1,4 @@
 lock "swaylock"
 timeout 840 "notify-send 'Aviso!' 'Bloqueio automatico dentro de 1 minuto.'"
 timeout 900 "swaylock"
+timeout 910 "niri msg action power-off-monitors"
