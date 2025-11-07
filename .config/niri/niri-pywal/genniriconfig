@@ -145,7 +145,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 2 
+        width 2
         active-color "$color3"
         inactive-color "$color0"
 
@@ -245,10 +245,10 @@ window-rule {
     // Transparency
     draw-border-with-background false
     // opacity 1
-    
+
     // Round corners
     geometry-corner-radius 6
-    clip-to-geometry true 
+    clip-to-geometry true
 }
 
 window-rule {
@@ -265,12 +265,12 @@ window-rule {
 
 window-rule {
     match app-id=r#"librewolf$"#
-    open-maximized true 
+    open-maximized true
 }
 
 window-rule {
     match app-id=r#"qalculate-gtk$"#
-    open-floating true    
+    open-floating true
 }
 
 binds {
@@ -284,12 +284,21 @@ binds {
     Super+Escape hotkey-overlay-title="Lock the Screen: wlogout" { spawn-sh "wlogout --buttons-per-row=2"; }
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun"; }
-    
+
     // Volume keys
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Media keys
+    Ctrl+Down allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    Ctrl+Right allow-when-locked=true { spawn-sh "playerctl next"; }
+    Ctrl+Left allow-when-locked=true { spawn-sh "playerctl previous"; }
+    Shift+Down allow-when-locked=true { spawn-sh "mpc toggle"; }
+    Shift+Right allow-when-locked=true { spawn-sh "mpc next"; }
+    Shift+Left allow-when-locked=true { spawn-sh "mpc prev"; }
+
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
