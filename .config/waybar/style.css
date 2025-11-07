@@ -128,7 +128,7 @@ tooltip label {
 }
 
 /* audio and network*/
-#pulseaudio,
+#wireplumber,
 #network {
     background-color: @set;
     font-size: 16px;

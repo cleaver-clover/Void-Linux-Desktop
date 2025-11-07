@@ -93,20 +93,11 @@
   },
 
   // audio
-  "pulseaudio": {
+  "wireplumber": {
     "scroll-step": 1,
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "󰖁 {icon} {format_source}",
     "format-muted": "  ",
-    "format-source": "{volume}%",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "phone": "",
-      "car": "",
-      "default": ["", "", ""]
-    },
+    "format-icons": ["", "", ""],
     "on-click": "pavucontrol"
   },
 

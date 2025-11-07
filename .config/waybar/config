@@ -34,7 +34,7 @@
 
     "modules-right": [
         "battery",
-        "pulseaudio",
+        "wireplumber",
         "network",
 	    "clock",
         "custom/exit"
