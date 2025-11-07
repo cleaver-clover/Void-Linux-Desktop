@@ -2,12 +2,13 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   
   "logo": {
-    "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
+    "type": "auto",        // Logo type: auto, builtin, small, file, etc.
     "source": "$HOME/.config/fastfetch/images/*",      // Built-in logo name or file path
-    "width": 35,           // Width in characters
-    "height": 17,          // Height in characters
+    "width": 32,           // Width in characters
+    "height": 12,          // Height in characters
     "padding": {
-        "top": 0,          // Top padding
+        "top": 2,          // Top padding
+        "bottom": 15,       // Bottom padding
         "left": 1,         // Left padding
         "right": 2         // Right padding    
     },

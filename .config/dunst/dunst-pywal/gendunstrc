@@ -11,12 +11,12 @@ cat <<CONF
     monitor = 0
     follow = mouse
 
-    width = (200, 350)
-    height = (20,500)
-    offset = 10x40
+    width = (50, 350)
+    height = (50,250)
 
     origin = tot-right
-
+    offset = (20, 20) 
+    
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -53,7 +53,7 @@ cat <<CONF
 
     icon_position = left
     
-    max_icon_size = 32  # Scale larger icons down to this size, set to 0 to disable
+    max_icon_size = 120  # Scale larger icons down to this size, set to 0 to disable
 
 
     # Paths to default icons.
@@ -70,7 +70,7 @@ cat <<CONF
     ### Misc/Advanced ###
 
     # dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
+    #browser = /usr/bin/firefox -new-tab
 
     always_run_script = true
     title = Dunst

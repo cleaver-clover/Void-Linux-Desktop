@@ -11,9 +11,10 @@ configuration{
     //icon-theme:           ;
 }
 
+
 window {
-    width:            35%;
-    height:           35%;
+    width:            45%;
+    height:           45%;
     padding:          20;
     text-color:       @foreground;
     background-color: @background;
@@ -60,7 +61,7 @@ inputbar {
 }
 
 listview {
-    columns:          1;
+    columns:          2;
     padding:          @padding;
     cycle:            false;
     dynamic:          true;
@@ -123,4 +124,3 @@ element selected.active {
     background-color: @selected-background;
 }
 
-// vim:ft=css

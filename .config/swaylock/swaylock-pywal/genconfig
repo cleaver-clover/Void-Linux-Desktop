@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# Generates swaylock configuration file
+
+. $HOME/.cache/wal/colors.sh
+
+cat <<CONF
+image=~/.wallpapers/blured_wallpaper
+font=Jet Brains Mono
+font-size=20
+scaling=fill
+daemonize
+hide-keyboard-layout
+scaling=fill
+
+indicator-x-position=965
+indicator-y-position=540
+indicator-radius=60
+indicator-thickness=10
+
+bs-hl-color=$color3
+
+caps-lock-bs-hl-color=ffa066
+caps-lock-key-hl-color=957fbb
+
+inside-color=$background
+inside-clear-color=$background
+inside-caps-lock-color=$background
+inside-ver-color=$background
+inside-wrong-color=$background
+
+key-hl-color=$color3
+
+line-color=1f1f28
+line-clear-color=1f1f28
+line-caps-lock-color=1f1f28
+line-ver-color=1f1f28
+line-wrong-color=1f1f28
+
+ring-color=1f1f28
+ring-clear-color=ffa066
+ring-caps-lock-color=1f1f28
+ring-ver-color=98bb6c
+ring-wrong-color=1f1f28
+
+separator-color=00000000
+
+text-color=$foreground
+text-clear-color=ffa066
+text-caps-lock-color=957fbb
+text-ver-color=dcd7ba
+text-wrong-color=f7768e
+CONF

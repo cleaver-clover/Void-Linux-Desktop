@@ -4,12 +4,12 @@
     monitor = 0
     follow = mouse
 
-    width = (200, 350)
-    height = (20,500)
-    offset = 10x40
+    width = (50, 350)
+    height = (50,250)
 
     origin = tot-right
-
+    offset = (20, 20) 
+    
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -19,7 +19,7 @@
     horizontal_padding = 8
 
     frame_width = 2
-    frame_color = "#d1c6ba"
+    frame_color = "#c2d5d8"
 
     separator_color = auto
     sort = yes
@@ -46,7 +46,7 @@
 
     icon_position = left
     
-    max_icon_size = 32  # Scale larger icons down to this size, set to 0 to disable
+    max_icon_size = 120  # Scale larger icons down to this size, set to 0 to disable
 
 
     # Paths to default icons.
@@ -63,7 +63,7 @@
     ### Misc/Advanced ###
 
     # dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
+    #browser = /usr/bin/firefox -new-tab
 
     always_run_script = true
     title = Dunst
@@ -94,23 +94,23 @@
 
 [urgency_low]
  
-    background = "#0b0a09"
-    foreground = "#d1c6ba"
+    background = "#121e1e"
+    foreground = "#c2d5d8"
     timeout = 6
     # Icon for notifications with low urgency, uncomment to enable
     icon = /home/arega/.config/dunst/notification-icon.png
 
 [urgency_normal]
-background = "#0b0a09"
-foreground = "#d1c6ba"
+background = "#121e1e"
+foreground = "#c2d5d8"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     icon = /home/arega/.config/dunst/notification-icon.png
 
 [urgency_critical]
-background = "#0b0a09"
-foreground = "#d1c6ba"
-    frame_color = "#90725C"
+background = "#121e1e"
+foreground = "#c2d5d8"
+    frame_color = "#468C8E"
     timeout = 120
     # Icon for notifications with critical urgency, uncomment to enable
     icon = /home/arega/.config/dunst/alert-icon.png

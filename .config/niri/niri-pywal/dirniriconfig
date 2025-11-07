@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Choses niri config final directory
+
+$HOME/.config/niri/niri-pywal/genniriconfig  > $HOME/.config/niri/config.kdl

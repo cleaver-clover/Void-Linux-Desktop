@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Choses swaylock config final directory
+
+$HOME/.config/swaylock/swaylock-pywal/genconfig > $HOME/.config/swaylock/config

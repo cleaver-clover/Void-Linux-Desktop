@@ -28,7 +28,6 @@ case "$(echo "$options" | $rofi_command -dmenu -selected-row 2)" in
 		slock & loginctl suspend
 		;;
 	$log_out)
-		# pkill dwm 
-		pkill dwm
+		pkill $XDG_CURRENT_DESKTOP
 		;;
 esac

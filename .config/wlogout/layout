@@ -1,0 +1,21 @@
+{
+    "label" : "lock",
+    "action" : "swaylock",
+    "keybind" : "l"
+}
+{
+    "label" : "reboot",
+    "action" : "loginctl reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "exit",
+    "action" : "pkill $XDG_CURRENT_DESKTOP",
+    "keybind" : "e"
+}
+{
+    "label" : "poweroff",
+    "action" : "loginctl poweroff",
+    "keybind" : "p"
+}
+

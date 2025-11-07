@@ -1,0 +1,42 @@
+/* Base config by bina: https://github.com/LierB/dotfiles */
+
+
+{
+    // load modules
+    "include": "~/.config/waybar/modules.json",
+
+    // general settings
+    "position": "top",
+    "margin-top": 8,
+    "margin-bottom": 0,
+    "layer": "top",
+    "margin-left": 14,
+    "margin-right": 14,
+    "spacing": 6,
+    "fixed-center": true,
+    "exclusive": true,
+
+    // unused modules
+    // "wlr/taskbar"
+    // "battery"
+
+    // modules
+    "modules-left": [
+        "cpu",
+        "memory",
+        "temperature",
+        "disk",
+    ],
+
+    "modules-center": [
+	    "niri/workspaces"
+    ],
+
+    "modules-right": [
+        "battery",
+        "pulseaudio",
+        "network",
+	    "clock",
+        "custom/exit"
+    ]
+}
