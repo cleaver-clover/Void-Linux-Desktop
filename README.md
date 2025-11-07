@@ -306,7 +306,7 @@ I prefer to use the proprietary driver, so the setup is the following:
 For **niri** to work this needs to be done:
 
 On `/etc/default/grub` add `nvidia-drm.modeset=1` to `GRUB_CMDLINE_LINUX_DEFAULT`. Then run `update-grub`.
-After this add `add_drivers+="nvidia nvidia-drm nvidia-modeset nvidia-uvm"` to a file `/etc/dracut.conf.d/nvidia.conf`. This file needs to be created.
+After this, add `add_drivers+="nvidia nvidia-drm nvidia-modeset nvidia-uvm"` to a file `/etc/dracut.conf.d/nvidia.conf`. This file needs to be created.
 
 ### AMD GPU
 
@@ -426,6 +426,9 @@ To setup wayland with niri wm install the following programs.
 -- For setting the gtk and qt themes
 # xbps-install nwg-look qt5ct qt6ct
 ```
+
+Some apps need sudo privilege like GParted. Run this command for them to be able to run:
+`xhost +SI:localuser:root`
 
 ### Other desktop apps
 
@@ -645,3 +648,20 @@ Some repos are needed to install nonfree and 32-bit packages:
 - multilib nonfree: `void-repo-multilib-nonfree`
 
 Note: Update after installing any of these repos.
+
+### Basic maintenance
+
+After many updates the system can become full of old pkgs. Also the old linux versions and drivers remain on the system and can prevent you from updating, so it is also good idea to remove the old ones.
+To clean them run these commands:
+
+```
+-- Clean cache
+# xbps-remobe -O
+
+-- list old kernels
+# vkpurge list
+
+-- remove selected versions
+# vkpurge rm <list old versions you want to remove>
+
+```
