@@ -419,7 +419,10 @@ To compile suckuless utilities enter the `dwm` and `slock` directories and run:
 To setup wayland with niri wm install the following programs.
 
 ```
-# xbps-install wayland xorg-server-xwayland xwayland-satellite mesa-dri Waybar wlogout niri swaylock swww swayidle 
+# xbps-install wayland xorg-server-xwayland xwayland-satellite mesa-dri Waybar wlogout niri swaylock swww swayidle wlroots0.19 
+
+-- Multiple display configuration (like arandr)
+# xbps-install wdisplays 
 
 -- For setting the gtk and qt themes
 # xbps-install nwg-look qt5ct qt6ct
