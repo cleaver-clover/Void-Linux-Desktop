@@ -328,7 +328,7 @@ also ALSA and Jack can also be enabled (see documentation to set
 PipeWire correctly):
 
 ```
-# xbps-install pipewire wireplumber helvum pavucontrol pamixer playerctl
+# xbps-install pipewire wireplumber helvum pavucontrol playerctl
 ```
 
 After installing setup wireplumber **system wide**:
@@ -396,8 +396,6 @@ Niri with wayland instalation guide is next
 -- setup desktop
 # xbps-install xrandr xclip xsetroot xautolock setroot numlockx mpv picom flameshot setxkbmap
 
-(control brightness on laptops)
-# xbps-install brillo
 (control displays)
 # xbps-install arandr
 
@@ -452,6 +450,8 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 # xbps-install git tree wget
 (music players)
 # xbps-install mpd mpc rmpc
+(control brightness on laptops)
+# xbps-install brillo
 
 -- pywal setup
 # sudo xbps-install pywal xrdb

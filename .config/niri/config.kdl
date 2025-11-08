@@ -124,11 +124,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#8B883A"
+        // active-color "#1C6897"
 
-        inactive-color "#081118"
+        inactive-color "#000000"
 
-        active-gradient from="#83782F" to="#8B883A" angle=70
+        active-gradient from="#67896F" to="#1C6897" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -139,11 +139,11 @@ layout {
         off
 
         width 2
-        active-color "#8B883A"
-        inactive-color "#081118"
+        active-color "#1C6897"
+        inactive-color "#000000"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#cfc6bc"
+        urgent-color "#c4cac5"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 

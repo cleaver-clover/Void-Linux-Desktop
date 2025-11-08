@@ -30,6 +30,7 @@ case "$XDG_CURRENT_DESKTOP" in
 	sh $HOME/.config/dunst/dunst-pywal/dirdunstrc
 	sh $HOME/.config/niri/niri-pywal/dirniriconfig
 	sh $HOME/.config/swaylock/swaylock-pywal/dirconfig
+	sh $HOME/.config/waybar/launch.sh
 	pkill dunst
 
 	# create wallpaper (rofi power menu)
@@ -40,8 +41,7 @@ case "$XDG_CURRENT_DESKTOP" in
 	cp $file $wallpaper
 	magick $file -blur 0x8 $blured_wallpaper
 
-	swww img ~/.wallpapers/current_wallpaper --transition-fps 60 --transition-type any
-	sh $HOME/.config/waybar/launch.sh
+	swww img ~/.wallpapers/current_wallpaper --transition-fps 60 --transition-type any	
 
 	notify-send -i ~/.wallpapers/current_wallpaper "Novo tema aplicado!" "Novo tema aplicado no niri wm"
 	;;

@@ -60,21 +60,21 @@ button:hover {
 
 button:hover#lock {
     border-radius: 10px 10px 0px 10px;
-    margin : 80px 0px 0px 530px;
+    margin : 80px 0px 0px 540px;
 }
 
 button:hover#reboot {
     border-radius: 10px 0px 10px 10px;
-    margin : 0px 0px 80px 530px;
+    margin : 0px 0px 80px 540px;
 }
 
 button:hover#exit {
     border-radius: 10px 10px 10px 0px;
-    margin : 80px 530px 0px 0px;
+    margin : 80px 540px 0px 0px;
 }
 
 button:hover#poweroff {
     border-radius: 0px 10px 10px 10px;
-    margin: 0px 530px 80px 0px;
+    margin: 0px 540px 80px 0px;
 }
 

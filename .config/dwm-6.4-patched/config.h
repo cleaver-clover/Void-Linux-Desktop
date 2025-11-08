@@ -176,29 +176,32 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,          {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,          {.i = +1 } },
 	{ MODKEY,                       XK_r,      spawn,           SHCMD("~/.config/scripts/set-rand-wallpaper.sh") },
-	{ MODKEY|ControlMask,       	XK_Prior,  spawn,           SHCMD("pamixer -u -i 2") },
-	{ MODKEY|ControlMask,       	XK_Next,   spawn,           SHCMD("pamixer -u -d 2") },
-	{ MODKEY|ControlMask,       	XK_m,      spawn,           SHCMD("pamixer -t") },
-	{ 0,							0x1008ff13,spawn,           SHCMD("pamixer -u -i 2") },
-	{ 0,							0x1008ff11,spawn,           SHCMD("pamixer -u -d 2") },
-	{ 0,							0x1008ff12,spawn,           SHCMD("pamixer -t") },
+	{ 0,							0x1008ff13,spawn,           SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+") },
+	{ 0,							0x1008ff11,spawn,           SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+") },
+	{ 0,							0x1008ff12,spawn,           SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") },
 	{ ControlMask,       	    	XK_Down,   spawn,           SHCMD("playerctl play-pause") },
 	{ ControlMask,       	    	XK_Right,  spawn,           SHCMD("playerctl next") },
 	{ ControlMask,       	    	XK_Left,   spawn,			SHCMD("playerctl previous") },
 	{ ShiftMask,       	    		XK_Down,   spawn,           SHCMD("mpc toggle") },
 	{ ShiftMask,       	    		XK_Right,  spawn,           SHCMD("mpc next") },
 	{ ShiftMask,       	    		XK_Left,   spawn,			SHCMD("mpc prev") },
+	/*
 	{ MODKEY|ShiftMask,				XK_Next,   spawn,			SHCMD("brightnessctl set 5%+") },
 	{ MODKEY|ShiftMask,				XK_Prior,  spawn,          	SHCMD("brightnessctl set 5%-") },
 	{ 0,							0x1008ff03,spawn,           SHCMD("brightnessctl set 5%+") },
 	{ 0,							0x1008ff03,spawn,           SHCMD("brightnessctl set 5%-") },
+	*/
 	/* Rotate screen on 180 degrees laptops */
+	/*
 	{ ShiftMask,					0x1008ff74,spawn,   	    SHCMD("xrandr --output eDP --primary --mode 1920x1080 --rate 60 --rotate normal") },
 	{ 0,							0x1008ff74,spawn,   	    SHCMD("xrandr --output eDP --primary --mode 1920x1080 --rate 60 --rotate inverted") },
+	*/
 	/* Enables HDMI and stuff on laptops */
+	/*/
 	{ 0,							0x1008ff41,spawn,           SHCMD("xrandr --output eDP --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off") },
   	{ ShiftMask,					0x1008ff41,spawn,           SHCMD("xrandr --output eDP --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --off --output DisplayPort-1 --off") },
-	TAGKEYS(                        XK_1,                       0)
+	*/
+   TAGKEYS(                        XK_1,                       0)
 	TAGKEYS(                        XK_2,                       1)
 	TAGKEYS(                        XK_3,                       2)
 	TAGKEYS(                        XK_4,                       3)
