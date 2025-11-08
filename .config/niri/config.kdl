@@ -124,11 +124,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#1C6897"
+        // active-color "#66A8D0"
 
-        inactive-color "#000000"
+        inactive-color "#0a0703"
 
-        active-gradient from="#67896F" to="#1C6897" angle=70
+        active-gradient from="#8D7A88" to="#66A8D0" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -139,11 +139,11 @@ layout {
         off
 
         width 2
-        active-color "#1C6897"
-        inactive-color "#000000"
+        active-color "#66A8D0"
+        inactive-color "#0a0703"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#c4cac5"
+        urgent-color "#dcd9d8"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -298,8 +298,8 @@ binds {
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    //XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    //XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     // Launch application keybinds
     Super+Alt+B allow-when-locked=false { spawn "librewolf"; }

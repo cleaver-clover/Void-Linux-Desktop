@@ -6,8 +6,6 @@ do
 	    sh ~/.config/scripts/set-wallpaper.sh "$file" ;;
 	"r") 
 	    sh ~/.config/scripts/set-rand-wallpaper.sh ;;
-	# "h") 
-	    # sh ~/.config/scripts/set-wallpaper-hypr.sh "$file" ;;
 	*)
 	    notify-send "Aviso!" "Tecla errada."
 	    ;;
