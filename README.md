@@ -447,7 +447,7 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 # xbps-install rofi fastfetch nemo nsxiv dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
 
 (usefull)
-# xbps-install timeshift keepassxc engrampa syncthing gparted gammastep  elogind polkit-gnome 
+# xbps-install htop timeshift keepassxc engrampa syncthing gparted gammastep  elogind polkit-gnome 
 (development)
 # xbps-install git tree wget
 (music players)
