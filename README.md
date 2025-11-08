@@ -308,6 +308,9 @@ For **niri** to work this needs to be done:
 On `/etc/default/grub` add `nvidia-drm.modeset=1` to `GRUB_CMDLINE_LINUX_DEFAULT`. Then run `update-grub`.
 After this, add `add_drivers+="nvidia nvidia-drm nvidia-modeset nvidia-uvm"` to a file `/etc/dracut.conf.d/nvidia.conf`. This file needs to be created.
 
+To allow screen sharing with flatpak apps only, install `xdg-desktop-portal-wlr` and `xdg-desktop-portal-gnome`.
+Note: I could not figure how to make native obs work, so it is easier to run flatpaks.
+
 ### AMD GPU
 
 [AMD or ATI](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/amd.html#amd-or-ati)
