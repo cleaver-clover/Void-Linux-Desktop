@@ -3,5 +3,5 @@
 # terminate running instances
 pkill waybar
 
-# lauch waybar
-waybar
+# lauch waybar and disown
+waybar & disown -a 

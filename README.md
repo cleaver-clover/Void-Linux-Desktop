@@ -62,11 +62,11 @@ Partition the drive:
 
 Partition format:
 
-- 1G EFI System (large size if we want to change kernel in the future)
+- 1G EFI System -> EFI partition (large size if we want to change kernel in the future)
 
-- 2G Linux Filesystem -> Boot (large size if we want to change kernel in the future)
+- 2G Linux Filesystem -> boot partition (large size if we want to change kernel in the future)
 
-- 100% Linux Filesystem -> root (partition to encrypt)
+- 100% Linux Filesystem -> root partition (partition to encrypt)
 
 #### Disk encription
 
@@ -119,7 +119,7 @@ Moving to the installation, we need to mount the disk first in the following ord
 # mkdir -p /mnt/boot                        -> Create mount point for boot
 # mount /dev/<boot_partition> /mnt/boot     -> Mount boot
 # mkdir -p /mnt/boot/efi                    -> Create EFI mount point
-# mount /dev/<EFI_partition> /mnt/boot/efi/ -> Mount EFI
+# mount /dev/<EFI_partition> /mnt/boot/efi  -> Mount EFI
 ```
 
 Copy the RSA keys from the installation medium to the target root directory.
@@ -192,7 +192,7 @@ Find UUID of the root partition and save it temporarely.
 
 You should now edit `/etc/default/grub` and copy the UUID:
 
-add: `rd.luks.uuid=<UUID> rd.lvm .vg=voidroot rd.luks.allow-discards` to:`GRUB_CMDLINE_LINUX_DEFAULT`
+add: `rd.luks.uuid=<UUID> rd.lvm.vg=voidroot rd.luks.allow-discards` to:`GRUB_CMDLINE_LINUX_DEFAULT`
 
 Save the file and install grub:
 
@@ -394,7 +394,7 @@ Niri with wayland instalation guide is next
 # xbps-install base-devel libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 
 -- setup desktop
-# xbps-install xrandr xclip xsetroot xautolock setroot numlockx
+# xbps-install xrandr xclip xsetroot xautolock setroot numlockx mpv picom flameshot setxkbmap
 
 (control brightness on laptops)
 # xbps-install brillo
@@ -429,11 +429,13 @@ To setup wayland with niri wm install the following programs.
 
 Some apps need sudo privilege like GParted. Run this command for them to be able to run:
 `xhost +SI:localuser:root`
+
 Note: This is already in the niri config and runs at startup.
 
 #### Screen sharing
 
 To allow screen sharing with flatpak apps only, install `xdg-desktop-portal-wlr` and `xdg-desktop-portal-gnome`.
+
 Note: I could not figure how to make native obs work, so it is easier to run flatpaks.
 
 ### Other desktop apps
@@ -442,10 +444,10 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 
 ```
 (basic)
-# xbps-install rofi fastfetch nemo nsxiv mpv picom dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
+# xbps-install rofi fastfetch nemo nsxiv dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
 
 (usefull)
-# xbps-install timeshift flameshot keepassxc engrampa syncthing gparted gammastep  elogind polkit-gnome setxkbmap
+# xbps-install timeshift keepassxc engrampa syncthing gparted gammastep  elogind polkit-gnome 
 (development)
 # xbps-install git tree wget
 (music players)
@@ -476,7 +478,7 @@ To set it up, run these commands:
 
 ```
 $ sudo xbps-install stow 
-$ git clone <this_repo>
+$ git clone <this_repo> .dotfiles
 $ cd .dotfiles
 $ stow .
 ```

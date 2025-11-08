@@ -38,8 +38,8 @@ case "$XDG_CURRENT_DESKTOP" in
 	cp $1 $wallpaper
 	magick $1 -blur 0x8 $blured_wallpaper
 
-	pkill swaybg
 	swww img ~/.wallpapers/current_wallpaper --transition-fps 60 --transition-type any
+	sh $HOME/.config/waybar/launch.sh
 
 	notify-send -i ~/.wallpapers/current_wallpaper "Novo tema aplicado!" "Novo tema aplicado no niri wm!"
 	;;
