@@ -454,8 +454,10 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 # xbps-install mpd mpc rmpc
 
 -- pywal setup
-# sudo xbps-install pywal
+# sudo xbps-install pywal xrdb
 $ sudo ln -s ~/.cache/wal/colors.Xresources ~/.Xresources
+(load theme for nsxiv)
+$ xrdb ~/.Xresources
 
 -- chrony (synchronise the system clock with NTP servers) if needed
 # xbps-install chrony
