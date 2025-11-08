@@ -429,6 +429,7 @@ To setup wayland with niri wm install the following programs.
 
 Some apps need sudo privilege like GParted. Run this command for them to be able to run:
 `xhost +SI:localuser:root`
+Note: This is already in the niri config and runs at startup.
 
 ### Other desktop apps
 

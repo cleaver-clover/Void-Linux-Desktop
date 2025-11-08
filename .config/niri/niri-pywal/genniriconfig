@@ -201,6 +201,7 @@ spawn-at-startup "swayidle"
 spawn-sh-at-startup "wal -n -R"
 spawn-sh-at-startup "syncthing --no-browser"
 spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
+spawn-sh-at-startup "xhost +SI:localuser:root"
 
 
 
