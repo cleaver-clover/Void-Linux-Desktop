@@ -308,9 +308,6 @@ For **niri** to work this needs to be done:
 On `/etc/default/grub` add `nvidia-drm.modeset=1` to `GRUB_CMDLINE_LINUX_DEFAULT`. Then run `update-grub`.
 After this, add `add_drivers+="nvidia nvidia-drm nvidia-modeset nvidia-uvm"` to a file `/etc/dracut.conf.d/nvidia.conf`. This file needs to be created.
 
-To allow screen sharing with flatpak apps only, install `xdg-desktop-portal-wlr` and `xdg-desktop-portal-gnome`.
-Note: I could not figure how to make native obs work, so it is easier to run flatpaks.
-
 ### AMD GPU
 
 [AMD or ATI](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/amd.html#amd-or-ati)
@@ -434,6 +431,11 @@ Some apps need sudo privilege like GParted. Run this command for them to be able
 `xhost +SI:localuser:root`
 Note: This is already in the niri config and runs at startup.
 
+#### Screen sharing
+
+To allow screen sharing with flatpak apps only, install `xdg-desktop-portal-wlr` and `xdg-desktop-portal-gnome`.
+Note: I could not figure how to make native obs work, so it is easier to run flatpaks.
+
 ### Other desktop apps
 
 Don't forget to set **timeshift**  to back up your system after setting it all up.
@@ -544,6 +546,8 @@ To manage Flatpak permissions, install Flatseal:
 ```
 $ flatpak install flathub com.github.tchx84.Flatseal
 ```
+
+Install the portal service for Flatpak `xdg-desktop-portal` and `xdg-desktop-portal-gtk` for flatpak to run properly.
 
 #### AM Application Manager
 
