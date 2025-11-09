@@ -190,6 +190,9 @@ layout {
     }
 }
 
+// Remove some windows titlebars
+prefer-no-csd
+
 // Startup commands.
 
 spawn-at-startup "waybar"
@@ -204,8 +207,6 @@ spawn-sh-at-startup "wal -n -R"
 spawn-sh-at-startup "syncthing --no-browser"
 spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "xhost +SI:localuser:root"
-
-
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
