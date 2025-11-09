@@ -98,6 +98,8 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 16
 
+    always-center-single-column
+
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -231,11 +233,20 @@ animations {
     // slowdown 3.0
 }
 
+// Costom workspaces
+workspace "β"{
+    open-on-output "DP-3"
+}
+
+workspace "Ψ"{
+    open-on-output "DP-3"
+}
+
 // Command to pi app-id : "niri msg pick-window"
 
 // Example: block out password managers from screen capture.
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id="KeePassXC"
     block-out-from "screen-capture"
 
     // Use this instead if you want them visible on third-party screenshot tools.
@@ -253,26 +264,34 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"kitty$"#
+    match app-id="kitty"
     opacity 0.9
 }
 
-window-rule {
-    match app-id=r#"nemo$"#
-    match app-id=r#"dev.zed.Zed-Preview$"#
-    match app-id=r#"Logseq$"#
+window-rule { 
+    match app-id="nemo"
+    match app-id="dev.zed.Zed-Preview"
+    match app-id="Logseq"
     opacity 0.94
 }
 
 window-rule { 
-    match app-id=r#"chromium$"#
-    match app-id=r#"librewolf$"#
+    match app-id="chromium*"
+    match app-id="librewolf"
     open-maximized true
+    open-on-workspace "β"
 }
 
 window-rule {
-    match app-id=r#"qalculate-gtk$"#
+    match app-id="qalculate-gtk"
     open-floating true
+}
+
+window-rule {
+    match app-id="nemo"
+    match app-id="kitty"
+    match app-id="KeePassXC"
+    open-on-workspace "Ψ"
 }
 
 binds {
