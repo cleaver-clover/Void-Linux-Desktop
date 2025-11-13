@@ -270,7 +270,7 @@ window-rule {
 }
 
 window-rule { 
-    match app-id="nemo"
+    match app-id="org.gnome.Nautilus"
     match app-id="dev.zed.Zed-Preview"
     match app-id="Logseq"
     opacity 0.94
@@ -289,7 +289,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="nemo"
+    match app-id="org.gnome.Nautilus"
     match app-id="kitty"
     match app-id="KeePassXC"
     open-on-workspace "Ψ"
@@ -330,7 +330,7 @@ binds {
 
     // Launch application keybinds
     Super+Alt+B allow-when-locked=false { spawn "librewolf"; }
-    Super+Alt+N allow-when-locked=false { spawn "nemo"; }
+    Super+Alt+N allow-when-locked=false { spawn "nautilus"; }
     Super+Alt+K allow-when-locked=false { spawn "keepassxc"; }
 
     // pywal binds

@@ -128,7 +128,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,				XK_b, 	   spawn,           SHCMD("librewolf") },
 	{ MODKEY|Mod1Mask,				XK_l, 	   spawn,           SHCMD("logseq") },
 	{ MODKEY|Mod1Mask,				XK_k, 	   spawn,           SHCMD("keepassxc") },
-	{ MODKEY|Mod1Mask,				XK_n, 	   spawn,           SHCMD("nemo") },
+	{ MODKEY|Mod1Mask,				XK_n, 	   spawn,           SHCMD("nautilus") },
  	{ MODKEY,						XK_b,      togglebar,       {0} },
 	{ MODKEY,						XK_plus,   incnmaster,      {.i = +1 } },
 	{ MODKEY,						XK_minus,  incnmaster,      {.i = -1 } },
