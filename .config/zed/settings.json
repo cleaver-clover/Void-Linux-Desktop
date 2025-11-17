@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "soft_wrap": "editor_width",
+  "minimap": {
+    "show": "auto"
+  },
   "completion_menu_scrollbar": "never",
   "ui_font_weight": 400.0,
   "buffer_font_family": "JetBrains Mono",

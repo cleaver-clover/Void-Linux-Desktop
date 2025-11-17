@@ -10,6 +10,16 @@ cat <<CONF
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+gestures {
+    hot-corners {
+        off
+        // top-left
+        // top-right
+        // bottom-left
+        // bottom-right
+    }
+}
+
 input {
     mod-key "Super"
     mod-key-nested "Alt"
