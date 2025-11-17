@@ -277,5 +277,10 @@
     "prefix": ["solution", "\\solution"],
     "body": ["\\textit{ Sol. }"],
     "description": "Insert italic 'Sol.'"
+  },
+  "Insert Citation": {
+    "prefix": ["cite", "\\cite"],
+    "body": ["\\cite{$0}"],
+    "description": "Insert citation"
   }
 }
