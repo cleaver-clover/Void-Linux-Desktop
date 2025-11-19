@@ -217,7 +217,7 @@ Genarate initramfs:
 This command will also add your user to the main groups for desktop use.
 
 ```
-[xchroot /mnt] # useradd --create-home --groups wheel,users,audio,video,storage,cdrom,input,lp,optical,plugdev,network --shell /bin/bash <user_name>
+[xchroot /mnt] # useradd --create-home --groups wheel,users,audio,video,storage,cdrom,input,lp,optical,plugdev,network,dialout --shell /bin/bash <user_name>
 [xchroot /mnt] # passwd <user_name>
 ```
 
