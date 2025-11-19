@@ -1,75 +1,80 @@
 {
   "Large Summation": {
-    "prefix": ["sumlarge", "\\sumlarge"],
+    "prefix": ["sumlarge"],
     "body": ["\\displaystyle\\sum_{$1}^{$2}$3"],
     "description": "Insert a large summation notation."
   },
   "Inline Summation": {
-    "prefix": ["suminline", "\\suminline"],
+    "prefix": ["suminline"],
     "body": ["\\sum_{$1}^{$2}$3"],
     "description": "Insert an inline summation notation, (only in the cases when the environment is inline math environment)."
   },
   "Inline Math": {
-    "prefix": ["mathinline", "\\mathinline"],
+    "prefix": ["mathinline"],
     "body": ["\\$ $1 \\$$0"],
     "description": "Insert inline Math Environment."
   },
   "Centered Math": {
-    "prefix": ["mathcentered", "\\mathcentered"],
+    "prefix": ["mathcentered"],
     "body": ["\\$$ $0 \\$$"],
     "description": "Insert centered Math Environment."
   },
   "Section": {
-    "prefix": ["sec", "section", "\\section"],
+    "prefix": ["sec", "section"],
     "body": ["\\section{$1}$0"],
     "description": "Insert a new section."
   },
   "Subsection": {
-    "prefix": ["ssec", "subsection", "\\subsection"],
+    "prefix": ["ssec", "subsection"],
     "body": ["\\subsection{$1}$0"],
     "description": "Insert a new subsection."
   },
   "Subsubsection": {
-    "prefix": ["sssec", "subsubsection", "\\subsubsection"],
+    "prefix": ["sssec", "subsubsection"],
     "body": ["\\subsubsection{$1}$0"],
     "description": "Insert a new subsubsection."
   },
   "Header": {
-    "prefix": ["header", "\\header", "##"],
+    "prefix": ["header", "##"],
     "body": "\\section*{$1}$0",
     "description": "Insert a section without index."
   },
   "Header Small": {
-    "prefix": ["headersmall", "\\headersmall", "###"],
+    "prefix": ["headersmall", "###"],
     "body": "\\subsection*{$1}$0",
     "description": "Insert a subsection without index."
   },
+  "Underline Text": {
+    "prefix": ["underline"],
+    "body": "\\underline{$1}$0",
+    "description": "Insert underline text."
+  },
   "Italic Text": {
-    "prefix": ["italic", "\\italic", "*"],
+    "prefix": ["italic", "*"],
     "body": "\\textit{$1}$0",
     "description": "Insert italic text."
   },
   "Bold Text": {
-    "prefix": ["bold", "\\bold", "**"],
+    "prefix": ["bold", "**"],
     "body": "\\textbf{$1}$0",
     "description": "Insert bold text."
   },
   "Bold Italic Text": {
-    "prefix": ["bolditalic", "\\bolditalic", "***"],
+    "prefix": ["bolditalic", "***"],
     "body": "\\textbf{\\textit{$1}}$0",
     "description": "Insert bold italic text."
   },
   "Itemize": {
-    "prefix": ["- ", "\\itemize", "itemize"],
+    "prefix": ["- ", "itemize"],
     "body": ["\\begin{itemize}", "\t\\item $1", "\\end{itemize}$0"]
   },
   "Up": {
-    "prefix": ["to", "\\to"],
+    "prefix": ["to"],
     "body": ["^ {$1}$0"],
     "description": "Superscript notation, as well as the power notation."
   },
   "Theorem": {
-    "prefix": ["theorem", "\\theorem"],
+    "prefix": ["theorem"],
     "body": [
       "\\begin{theorem}[${1:name of the theorem}]",
       "\t$0",
@@ -78,7 +83,7 @@
     "description": "Insert a theorem, whose style is already defined in the template. The serial number is automatically generated according to the section."
   },
   "Problem": {
-    "prefix": ["problem", "\\problem"],
+    "prefix": ["problem"],
     "body": [
       "\\begin{problem}[${1:name of the problem}]",
       "\t$0",
@@ -87,12 +92,12 @@
     "description": "Insert a problem, whose style is already defined in the template. The serial number is automatically generated according to the section."
   },
   "Indent": {
-    "prefix": ["tab", "\\tab"],
+    "prefix": ["tab"],
     "body": ["\\indent "],
     "description": "The equivalent of \"\\t\", also known as \"Tab\""
   },
   "Definition": {
-    "prefix": ["definition", "\\definition"],
+    "prefix": ["definition"],
     "body": [
       "\\begin{definition}[${1:name of the definition}]",
       "\t$0",
@@ -101,7 +106,7 @@
     "description": "Insert a definition, whose style is already defined in the template. The serial number is automatically generated according to the section."
   },
   "Proof": {
-    "prefix": ["proof", "\\proof"],
+    "prefix": ["proof"],
     "body": [
       "\\begin{proof}[Proof ${1:Other Information}]",
       "\t$0",
@@ -110,29 +115,29 @@
     "description": "Insert a proof, whose style is already defined in the template. The serial number is automatically generated according to the section."
   },
   "Large Integral": {
-    "prefix": ["integrallarge", "\\integrallarge"],
+    "prefix": ["integrallarge"],
     "body": ["\\displaystyle\\int_{$1}^{$2}$3"],
     "description": "Insert large integral notation."
   },
   "Inline Integral": {
-    "prefix": ["integralinline", "\\integralinline"],
+    "prefix": ["integralinline"],
     "body": ["\\int_{$1}^{$2}$3"],
     "description": "Insert inline integral notation, (only in the cases when the environment is inline math environment)."
   },
   "Inline Fraction": {
-    "prefix": ["fractioninline", "\\fractioninline"],
+    "prefix": ["fractioninline"],
     "body": ["\\frac{$1}{$2}$0"],
     "description": [
       "Insert inline fraction notation, (only in the cases when the environment is inline math environment)."
     ]
   },
   "Large Fraction": {
-    "prefix": ["fractionlarge", "\\fractionlarge"],
+    "prefix": ["fractionlarge"],
     "body": ["\\displaystyle\\frac{$1}{$2}$0"],
     "description": ["Insert large fraction notation"]
   },
   "Create 2D Plot environment": {
-    "prefix": ["plotenvironment2d", "\\plotenvironment2d"],
+    "prefix": ["plotenvironment2d"],
     "body": [
       "\\begin{tikzpicture}",
       "\\begin{axis}[",
@@ -151,7 +156,7 @@
     "description": "Create a 2DPlot Environment of pgfplots. The style declarations are already included in the snippet."
   },
   "Plot 2D Graph": {
-    "prefix": ["plotgraph2d", "\\plotgraph2d"],
+    "prefix": ["plotgraph2d"],
     "body": [
       "\\addplot [",
       "\tdomain=${1:-10}:${2:10},",
@@ -165,7 +170,7 @@
     "description": "Plot a 2D Graph in the 2D graph environment, noted that this can also be used in the 3D environment."
   },
   "Plot Circle 2D": {
-    "prefix": ["plotcircle2d", "\\plotcircle2d"],
+    "prefix": ["plotcircle2d"],
     "body": [
       "\\addplot [",
       "\tdomain=0:2*3.14159265,",
@@ -178,7 +183,7 @@
     "description": "Plot a 2D Circle in the 2D graph environment, noted that this can also be used in the 3D environment."
   },
   "Plot Line 2D": {
-    "prefix": ["plotline2d", "\\plotline2d"],
+    "prefix": ["plotline2d"],
     "body": [
       "\\addplot [",
       "\tdomain=${4:x1}:${5:x2},",
@@ -191,7 +196,7 @@
     "description": "Plot a 2D Line in the 2D graph environment, noted that this can also be used in the 3D environment."
   },
   "Plot Ellipse 2D": {
-    "prefix": ["plotellipse2d", "\\plotellipse2d"],
+    "prefix": ["plotellipse2d"],
     "body": [
       "\\addplot [",
       "\tdomain=0:2*3.14159265,",
@@ -204,10 +209,7 @@
     "description": "Plot a 2D Ellipse in the 2D graph environment, noted that this can also be used in the 3D environment."
   },
   "Plot Quadratic Function 2D by Point": {
-    "prefix": [
-      "plotquadraticfunction2dbypoint",
-      "\\plotquadraticfunction2dbypoint"
-    ],
+    "prefix": ["plotquadraticfunction2dbypoint"],
     "body": [
       "\\addplot [",
       "\tdomain=${4:x1}:${5:x2},",
@@ -220,7 +222,7 @@
     "description": "Plot a 2D graph of a quadratic function in the 2D graph environment by the given extrema, noted that this can also be used in the 3D environment."
   },
   "Plot Smooth Curve By Point Set": {
-    "prefix": ["plotsmoothcurvebypointset", "\\plotsmoothcurvebypointset"],
+    "prefix": ["plotsmoothcurvebypointset"],
     "body": [
       "\\addplot+[smooth]",
       "coordinates",
@@ -231,7 +233,7 @@
     "description": "Plot a Smooth Curve by point set (2D)."
   },
   "Create 3D Plot Environment": {
-    "prefix": ["plotenvironment3d", "\\plotenvironment3d"],
+    "prefix": ["plotenvironment3d"],
     "body": [
       "\\begin{tikzpicture}",
       "\\begin{axis}[",
@@ -252,7 +254,7 @@
     "description": "Create a 3DPlot Environment of pgfplots. The style declarations are already included in the snippet."
   },
   "Plot 3D Graph": {
-    "prefix": ["plotgraph3d", "\\plotgraph3d"],
+    "prefix": ["plotgraph3d"],
     "body": [
       "\\addplot3[",
       "\t${1|surf,mesh|},",
@@ -264,22 +266,22 @@
     "description": "Plot a 3D Graph in the 3D graph environment created."
   },
   "Create Align* Environment in Text": {
-    "prefix": ["aligntext", "\\aligntext"],
+    "prefix": ["aligntext"],
     "body": ["\\begin{align*}", "\t$1", "\\end{align*}$0"],
     "description": "Create an align environment when the context is in the text environment."
   },
   "Insert Problem Solving Index": {
-    "prefix": ["problemindex", "\\problemindex"],
+    "prefix": ["problemindex"],
     "body": ["\\noindent\\textbf{$1} $0"],
     "description": "Insert problem solving index format."
   },
   "Insert Solution Notation": {
-    "prefix": ["solution", "\\solution"],
+    "prefix": ["solution"],
     "body": ["\\textit{ Sol. }"],
     "description": "Insert italic 'Sol.'"
   },
   "Insert Citation": {
-    "prefix": ["cite", "\\cite"],
+    "prefix": ["cite"],
     "body": ["\\cite{$0}"],
     "description": "Insert citation"
   }
