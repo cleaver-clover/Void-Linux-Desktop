@@ -3,6 +3,16 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+gestures {
+    hot-corners {
+        off
+        // top-left
+        // top-right
+        // bottom-left
+        // bottom-right
+    }
+}
+
 input {
     mod-key "Super"
     mod-key-nested "Alt"
@@ -91,6 +101,8 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 16
 
+    always-center-single-column
+
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -124,11 +136,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#66A8D0"
+        // active-color "#6DC6B2"
 
-        inactive-color "#0a0703"
+        inactive-color "#03384F"
 
-        active-gradient from="#8D7A88" to="#66A8D0" angle=70
+        active-gradient from="#1C9C91" to="#6DC6B2" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -139,11 +151,11 @@ layout {
         off
 
         width 2
-        active-color "#66A8D0"
-        inactive-color "#0a0703"
+        active-color "#6DC6B2"
+        inactive-color "#03384F"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#dcd9d8"
+        urgent-color "#e0ede9"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -181,6 +193,9 @@ layout {
     }
 }
 
+// Remove some windows titlebars
+prefer-no-csd
+
 // Startup commands.
 
 spawn-at-startup "waybar"
@@ -195,8 +210,8 @@ spawn-sh-at-startup "wal -n -R"
 spawn-sh-at-startup "syncthing --no-browser"
 spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "xhost +SI:localuser:root"
-
-
+spawn-sh-at-startup "wl-paste --watch cliphist store"
+spawn-sh-at-startup "cliphist wipe"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -224,11 +239,20 @@ animations {
     // slowdown 3.0
 }
 
+// Costom workspaces
+workspace "β"{
+    open-on-output "DP-3"
+}
+
+workspace "Ψ"{
+    open-on-output "DP-3"
+}
+
 // Command to pi app-id : "niri msg pick-window"
 
 // Example: block out password managers from screen capture.
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id="KeePassXC"
     block-out-from "screen-capture"
 
     // Use this instead if you want them visible on third-party screenshot tools.
@@ -246,26 +270,34 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"kitty$"#
+    match app-id="kitty"
     opacity 0.9
 }
 
-window-rule {
-    match app-id=r#"nemo$"#
-    match app-id=r#"dev.zed.Zed-Preview$"#
-    match app-id=r#"Logseq$"#
+window-rule { 
+    match app-id="org.gnome.Nautilus"
+    match app-id="dev.zed.Zed-Preview"
+    match app-id="Logseq"
     opacity 0.94
 }
 
 window-rule { 
-    match app-id=r#"chromium$"#
-    match app-id=r#"librewolf$"#
+    match app-id="chromium*"
+    match app-id="librewolf"
     open-maximized true
+    open-on-workspace "β"
 }
 
 window-rule {
-    match app-id=r#"qalculate-gtk$"#
+    match app-id="qalculate-gtk"
     open-floating true
+}
+
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    match app-id="kitty"
+    match app-id="KeePassXC"
+    open-on-workspace "Ψ"
 }
 
 binds {
@@ -303,13 +335,17 @@ binds {
 
     // Launch application keybinds
     Super+Alt+B allow-when-locked=false { spawn "librewolf"; }
-    Super+Alt+N allow-when-locked=false { spawn "nemo"; }
+    Super+Alt+N allow-when-locked=false { spawn "nautilus"; }
     Super+Alt+K allow-when-locked=false { spawn "keepassxc"; }
 
     // pywal binds
     Super+R allow-when-locked=false { spawn-sh "sh ~/.config/scripts/set-rand-wallpaper.sh"; }
     Super+Alt+W allow-when-locked=false { spawn-sh "sh ~/.config/scripts/nsxiv.sh "; }
 
+    // clipboard bindings
+    Super+C allow-when-locked=false { spawn-sh "cliphist list | rofi -dmenu -p '' | cliphist decode | wl-copy"; }
+    Super+V allow-when-locked=false { spawn-sh "sh -c 'cliphist list | head -n 1 | cliphist decode | wl-copy && wtype -M ctrl v'"; }
+    
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     Mod+backslash repeat=false { toggle-overview; }
 
