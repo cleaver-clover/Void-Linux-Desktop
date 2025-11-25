@@ -136,11 +136,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#6DC6B2"
+        // active-color "#0F926E"
 
-        inactive-color "#03384F"
+        inactive-color "#010D1D"
 
-        active-gradient from="#1C9C91" to="#6DC6B2" angle=70
+        active-gradient from="#055B63" to="#0F926E" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -151,11 +151,11 @@ layout {
         off
 
         width 2
-        active-color "#6DC6B2"
-        inactive-color "#03384F"
+        active-color "#0F926E"
+        inactive-color "#010D1D"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#e0ede9"
+        urgent-color "#9ad8d6"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -210,8 +210,11 @@ spawn-sh-at-startup "wal -n -R"
 spawn-sh-at-startup "syncthing --no-browser"
 spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "xhost +SI:localuser:root"
-spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-sh-at-startup "cliphist wipe"
+
+// Clipboard
+spawn-sh-at-startup "wl-paste --watch"
+// spawn-sh-at-startup "wl-paste --watch cliphist store"
+// spawn-sh-at-startup "cliphist wipe"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -274,6 +277,11 @@ window-rule {
     opacity 0.9
 }
 
+window-rule {
+    match title="vim*"
+    opacity 0.98
+}
+
 window-rule { 
     match app-id="org.gnome.Nautilus"
     match app-id="dev.zed.Zed-Preview"
@@ -282,7 +290,7 @@ window-rule {
 }
 
 window-rule { 
-    match app-id="chromium*"
+    match app-id="chrom*"
     match app-id="librewolf"
     open-maximized true
     open-on-workspace "β"
@@ -343,8 +351,8 @@ binds {
     Super+Alt+W allow-when-locked=false { spawn-sh "sh ~/.config/scripts/nsxiv.sh "; }
 
     // clipboard bindings
-    Super+C allow-when-locked=false { spawn-sh "cliphist list | rofi -dmenu -p '' | cliphist decode | wl-copy"; }
-    Super+V allow-when-locked=false { spawn-sh "sh -c 'cliphist list | head -n 1 | cliphist decode | wl-copy && wtype -M ctrl v'"; }
+    //Super+C allow-when-locked=false { spawn-sh "cliphist list | rofi -dmenu -p '' | cliphist decode | wl-copy"; }
+    //Super+V allow-when-locked=false { spawn-sh "sh -c 'cliphist list | head -n 1 | cliphist decode | wl-copy && wtype -M ctrl v'"; }
     
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     Mod+backslash repeat=false { toggle-overview; }

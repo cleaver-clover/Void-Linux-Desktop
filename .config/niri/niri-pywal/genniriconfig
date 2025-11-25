@@ -297,7 +297,7 @@ window-rule {
 }
 
 window-rule { 
-    match app-id="chromium*"
+    match app-id="chrom*"
     match app-id="librewolf"
     open-maximized true
     open-on-workspace "β"
