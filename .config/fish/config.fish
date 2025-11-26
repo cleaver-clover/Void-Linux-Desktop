@@ -38,3 +38,4 @@ end
 
 #----------- PATH -----------
 export PATH="$PATH:$HOME/.local/bin" # needed for appman
+export PATH="$PATH:$HOME/.cago/bin" # needed for cargo (rust) 

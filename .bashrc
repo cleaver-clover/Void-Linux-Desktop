@@ -19,4 +19,5 @@ PS1='\u @ \w >> '
 
 #----------- PATH -----------
 export PATH="$PATH:$HOME/.local/bin" # needed for appman
+export PATH="$PATH:$HOME/.cago/bin" # needed for cargo (rust) 
 source $HOME/.openfoam/OpenFOAM-v2506/etc/bashrc #OpenFOAM

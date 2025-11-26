@@ -445,7 +445,7 @@ Don't forget to set **timeshift**  to back up your system after setting it all
 
 ```
 (basic)
-# xbps-install rofi fastfetch nautilus nsxiv dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
+# xbps-install rofi fastfetch nautilus gvfs nsxiv dunst kitty fish-shell zathura zathura-pdf-poppler qalculate-gtk
 
 (usefull)
 # xbps-install htop timeshift keepassxc engrampa syncthing gparted gammastep  elogind polkit-gnome 
