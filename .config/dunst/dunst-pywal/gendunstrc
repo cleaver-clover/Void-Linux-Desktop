@@ -53,7 +53,7 @@ cat <<CONF
 
     icon_position = left
     
-    max_icon_size = 120  # Scale larger icons down to this size, set to 0 to disable
+    max_icon_size = 75  # Scale larger icons down to this size, set to 0 to disable
 
 
     # Paths to default icons.
