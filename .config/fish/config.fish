@@ -35,6 +35,40 @@ function clean-system
     appman -c
 end
 
+function gcode-alias
+    # Check if at least the filename is provided
+    if test (count $argv) -lt 1
+        echo "Usage: svg2gcode_alias <my-svg.svg> <dimension>"
+        echo "Example: gcode-alias drawing.svg 500mm"
+        return 1
+    end
+
+    set input_file $argv[1]
+    
+    # Set dimension to second argument, or default to '360mm' if not provided
+    set dimension "360mm"
+    if test (count $argv) -ge 2
+        set dimension $argv[2]
+    end
+
+    # Ensure the dimension ends with a comma
+    if not string match -q "*," "$dimension"
+        set dimension "$dimension,"
+    end
+
+    # Generate output filename by stripping .svg and adding .gcode
+    set output_file (string replace -r '\.svg$' '' "$input_file").gcode
+
+    echo "Converting $input_file to $output_file"
+    
+    svg2gcode "$input_file" \
+        --off 'G01 Z5 F5000' \
+        --on 'G01 Z0 F5000' \
+        --feedrate 2500 \
+        --dimensions "$dimension" \
+		--end "G0 X0 Y0" \
+        -o "$output_file"
+end
 
 #----------- PATH -----------
 export PATH="$PATH:$HOME/.local/bin" # needed for appman
