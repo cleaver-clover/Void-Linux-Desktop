@@ -62,7 +62,7 @@ function gcode-alias
     echo "Converting $input_file to $output_file"
     
     svg2gcode "$input_file" \
-        --off 'G01 Z5 F5000' \
+        --off 'G01 Z4 F5000' \
         --on 'G01 Z0 F5000' \
         --feedrate 2500 \
         --dimensions "$dimension" \
