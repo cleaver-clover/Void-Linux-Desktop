@@ -508,6 +508,10 @@ First, find the IP of the machine you want to scan by running ``$ ip a``.
 
 Then test the hole internet with ``$ sudo nmap -sS <ip>``, and look for open ports.
 
+#### Syncthing in local network
+
+To be able to use syncthing on a local network we need to add rules to the local firewall.
+Using ufw we just need to run this command after setting it up: `$ sudo ufw allow syncthing`
 
 ### Additional package managers
 
@@ -671,7 +675,7 @@ To clean them run these commands:
 
 ```
 -- Clean cache
-# xbps-remobe -O
+# xbps-remove -O
 
 -- list old kernels
 # vkpurge list

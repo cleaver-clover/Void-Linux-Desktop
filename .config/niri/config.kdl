@@ -136,11 +136,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#8F7566"
+        // active-color "#D74809"
 
-        inactive-color "#272024"
+        inactive-color "#0F0E0F"
 
-        active-gradient from="#716963" to="#8F7566" angle=70
+        active-gradient from="#636469" to="#D74809" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -151,11 +151,11 @@ layout {
         off
 
         width 2
-        active-color "#8F7566"
-        inactive-color "#272024"
+        active-color "#D74809"
+        inactive-color "#0F0E0F"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#d9beab"
+        urgent-color "#dbc5a2"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -283,7 +283,7 @@ window-rule {
 }
 
 window-rule { 
-    match app-id="org.gnome.Nautilus"
+    //match app-id="org.gnome.Nautilus"
     match app-id="dev.zed.Zed-Preview"
     match app-id="Logseq"
     opacity 0.94
@@ -294,6 +294,7 @@ window-rule {
     match app-id="librewolf"
     open-maximized true
     open-on-workspace "β"
+	open-focused true
 }
 
 window-rule {
@@ -306,6 +307,7 @@ window-rule {
     match app-id="kitty"
     match app-id="KeePassXC"
     open-on-workspace "Ψ"
+	open-focused true
 }
 
 binds {
