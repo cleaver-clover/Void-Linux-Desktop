@@ -136,11 +136,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#D74809"
+        // active-color "#2A4850"
 
-        inactive-color "#0F0E0F"
+        inactive-color "#0c1012"
 
-        active-gradient from="#636469" to="#D74809" angle=70
+        active-gradient from="#253C44" to="#2A4850" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -151,11 +151,11 @@ layout {
         off
 
         width 2
-        active-color "#D74809"
-        inactive-color "#0F0E0F"
+        active-color "#2A4850"
+        inactive-color "#0c1012"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#dbc5a2"
+        urgent-color "#aabcc0"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -289,17 +289,24 @@ window-rule {
     opacity 0.94
 }
 
-window-rule { 
-    match app-id="chrom*"
-    match app-id="librewolf"
-    open-maximized true
-    open-on-workspace "β"
-	open-focused true
-}
 
 window-rule {
     match app-id="qalculate-gtk"
     open-floating true
+}
+
+window-rule {
+    match app-id="zen"
+    open-maximized true
+}
+
+window-rule { 
+    match app-id="chrom*"
+    match app-id="brave-browser"
+    match app-id="librewolf"
+    open-maximized true
+    open-on-workspace "β"
+	open-focused true
 }
 
 window-rule {

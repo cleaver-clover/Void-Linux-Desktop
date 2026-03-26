@@ -5,6 +5,6 @@
 
 # Autologin into WM
 if [[ $(tty) == /dev/tty1 ]]; then
-    # startx
-    dbus-run-session niri --session 
+    startx
+    # dbus-run-session niri --session 
 fi

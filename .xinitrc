@@ -28,5 +28,4 @@ mpd &
 xautolock -time 15 -locker "slock" -notify 120 -notifier "dunstify 'Locking system in 2 minutes!!'"  &
 #xautolock -time 20 -locker "loginctl suspend" &
 
-# Start dwm with dbus
 exec dbus-run-session dwm
