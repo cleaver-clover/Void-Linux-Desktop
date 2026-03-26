@@ -2,7 +2,7 @@
 
 ram() {
 	mem=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
-	echo   "$mem"
+	echo  "$mem"
 }
 
 bat(){
