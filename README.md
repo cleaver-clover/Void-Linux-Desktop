@@ -131,7 +131,7 @@ Copy the RSA keys from the installation medium to the target root directory.
 
 ### Void Linux installation and setup with chroot
 
-For EFI systems using the main glibc repo, this is the install command plus neovim to help edit some files, and dbus NetworkManager to access to an internet connection.
+For EFI systems using the main glibc repo, this is the install command plus neovim to help edit some files, and dbus, stubby and NetworkManager to access to an internet connection.
 
 ```
 # xbps-install -Sy -R https://repo-default.voidlinux.org/current -r /mnt base-system cryptsetup grub-x86_64-efi lvm2 neovim NetworkManager dbus dbus-glib
@@ -260,7 +260,7 @@ Can edit connections with `nmtui`.
 # reboot
 ```
 
-#### DNS configuration
+#### Configure DNS with TLS encryption 
 
 If this is not set there will be no connection made. Void Linux configures `/etc/resolv.conf ` with `openresolv` so the command to update to the default config is this:
 
@@ -268,26 +268,43 @@ If this is not set there will be no connection made. Void Linux configures `/etc
 # resolvconf -u
 ```
 
-##### Use custom DNS
+Then the `/etc/resolv.conf ` should have:
+
+```
+nameserver 127.0.0.1
+```
+
+
+##### Use custom DNS with
 
 I recommend connecting to [quad9](https://quad9.net/) or [Mullvad](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls) DNS.
 
-To set this up we need to edit the `/etc/resolvconf.conf` and add the lines:
+To set this up we need to edit the `/etc/stubby/stubby.yml` and bellow `round_robin_upstreams: 1` add the lines (I'm using quad9):
 
 ```
-name_server=<chosen_dns_ipv4>
-name_server=<chosen_dns_ipv6>
+upstream_recursive_servers:
+  # Quad9 (IPv4)
+  - address_data: 9.9.9.9
+    tls_auth_name: "dns.quad9.net"
+  - address_data: 149.112.112.112
+    tls_auth_name: "dns.quad9.net"
+    # Quad9 (IPv6 - Opcional)
+  - address_data: 2620:fe::fe
+    tls_auth_name: "dns.quad9.net"
+  - address_data: 2620:fe::9
+    tls_auth_name: "dns.quad9.net"
 ```
 
-Save and exit the file and update `resolv.conf` with:
+Save and exit and enable stubby:
 
 ```
-# resolvconf -u
+# ln -s /etc/sv/stubby /var/service/
 ```
 
 #### Test and update system
 
 ```
+# sv status stubby
 # ping gnu.org
 # xbps-install -Su
 ```
