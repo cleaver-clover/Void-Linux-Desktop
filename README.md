@@ -274,6 +274,13 @@ Then the `/etc/resolv.conf ` should have:
 nameserver 127.0.0.1
 ```
 
+Note that in some institutional networks your `/etc/resolv.conf ` should have:
+```
+nameserver 127.0.0.1
+nameserver 9.9.9.9
+```
+This is common in school networks to not let you connect with fully encripted DNS.
+If you are in a private network it will connect to the first option and you will have the stubby connection.
 
 ##### Use custom DNS with
 
@@ -300,6 +307,8 @@ Save and exit and enable stubby:
 ```
 # ln -s /etc/sv/stubby /var/service/
 ```
+
+You can test this setup with [Cloudflare Security Check](https://www.cloudflare.com/ssl/encrypted-sni/)
 
 #### Test and update system
 
