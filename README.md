@@ -329,7 +329,7 @@ I prefer to use the proprietary driver, so the setup is the following:
 # xbps-install -Su
 # xbps-install nvidia nvidia-libs-32bit
 ```
-For **niri** to work this needs to be done:
+For **niri** to work this might be required (no need after mai/2026 void updates):
 
 On `/etc/default/grub` add `nvidia-drm.modeset=1` to `GRUB_CMDLINE_LINUX_DEFAULT`. Then run `update-grub`.
 After this, add `add_drivers+="nvidia nvidia-drm nvidia-modeset nvidia-uvm"` to a file `/etc/dracut.conf.d/nvidia.conf`. This file needs to be created.
