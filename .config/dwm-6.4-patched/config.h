@@ -68,7 +68,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const float smfact    = 0.00; /* factor of tiled clients [0.00..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
@@ -79,8 +79,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     	arrange function */
 	/* first entry is default */
-	{ "Float",      NULL },    /* no layout function means floating behavior */
 	{ "MS",      	tile },    
+	{ "Float",      NULL },    /* no layout function means floating behavior */
 	{ "CentM",      centeredmaster },
 //	{ "BotS",      	bstack },
 //	{ "Grid",      	grid },
@@ -177,7 +177,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,          {.i = +1 } },
 	{ MODKEY,                       XK_r,      spawn,           SHCMD("~/.config/scripts/set-rand-wallpaper.sh") },
 	{ 0,							0x1008ff13,spawn,           SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+") },
-	{ 0,							0x1008ff11,spawn,           SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+") },
+	{ 0,							0x1008ff11,spawn,           SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-") },
 	{ 0,							0x1008ff12,spawn,           SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") },
 	{ ControlMask,       	    	XK_Down,   spawn,           SHCMD("playerctl play-pause") },
 	{ ControlMask,       	    	XK_Right,  spawn,           SHCMD("playerctl next") },
