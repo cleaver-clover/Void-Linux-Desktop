@@ -26,6 +26,24 @@ start = [ "launcher", "wallpaper", "workspaces", "ram", "cpu", "audio_visualizer
 [hooks]
 wallpaper_changed = "sh ~/.config/scripts/set-noctalia-wallpaper.sh $NOCTALIA_WALLPAPER_PATH"
 
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
 [location]
 address = "Leiria, Portuga"
 auto_locate = true
@@ -53,7 +71,7 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DP-2", "loc
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
-        center_password_text = false
+        center_password_text = true
         input_opacity = 1.0
         input_radius = 6.0
         layout = "compact"
@@ -87,13 +105,17 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DP-2", "loc
         show_session_buttons = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 128.0
-    box_width = 256.0
+    box_height = 192.0
+    box_width = 384.0
     cx = 960.0
-    cy = 284.0
+    cy = 316.0
     output = "DP-2"
     rotation = 0.0
     type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        shadow = false
 
 [theme]
 builtin = "Noctalia"
