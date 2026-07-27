@@ -21,7 +21,7 @@ end = [
 font_family = "JetBrains Mono"
 margin_ends = 0
 radius = 0
-start = [ "launcher", "wallpaper", "workspaces", "audio_visualizer", "ram", "cpu" ]
+start = [ "launcher", "wallpaper", "workspaces", "ram", "cpu", "audio_visualizer" ]
 
 [hooks]
 wallpaper_changed = "sh ~/.config/scripts/set-noctalia-wallpaper.sh $NOCTALIA_WALLPAPER_PATH"
@@ -93,13 +93,17 @@ source = "wallpaper"
 directory = "/home/clover/Imagens/Wallpaper_Shuffle"
 
     [wallpaper.default]
-    path = "/home/clover/Imagens/Wallpaper_Shuffle/andreas-gucklhorn-mawU2PoJWfU-unsplash.jpg"
+    path = "/home/clover/Imagens/Wallpaper_Shuffle/anatol-rurac-3DbxVkEUZMI-unsplash.jpg"
 
     [wallpaper.last]
-    path = "/home/clover/Imagens/Wallpaper_Shuffle/andreas-gucklhorn-mawU2PoJWfU-unsplash.jpg"
+    path = "/home/clover/Imagens/Wallpaper_Shuffle/anatol-rurac-3DbxVkEUZMI-unsplash.jpg"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/clover/Imagens/Wallpaper_Shuffle/andreas-gucklhorn-mawU2PoJWfU-unsplash.jpg"
+    path = "/home/clover/Imagens/Wallpaper_Shuffle/anatol-rurac-3DbxVkEUZMI-unsplash.jpg"
+
+[widget.audio_visualizer]
+centered = false
+mirrored = false
 
 [widget.workspaces]
 display = "name"
