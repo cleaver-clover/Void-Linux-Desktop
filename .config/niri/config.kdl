@@ -136,11 +136,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#8B8C9B"
+        // active-color "#626569"
 
-        inactive-color "#091E3D"
+        inactive-color "#0B1B1D"
 
-        active-gradient from="#807F91" to="#8B8C9B" angle=70
+        active-gradient from="#214C60" to="#626569" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -151,11 +151,11 @@ layout {
         off
 
         width 2
-        active-color "#8B8C9B"
-        inactive-color "#091E3D"
+        active-color "#626569"
+        inactive-color "#0B1B1D"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#dedcde"
+        urgent-color "#d3d1da"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -199,15 +199,11 @@ prefer-no-csd
 // Startup commands.
 
 spawn-at-startup "noctalia"
-//spawn-at-startup "waybar"
 spawn-at-startup "pipewire"
 spawn-at-startup "gammastep"
 //spawn-at-startup "mpd"
-//spawn-at-startup "swww-daemon"
-//spawn-at-startup "swayidle"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-//spawn-sh-at-startup "wal -n -R"
 spawn-sh-at-startup "syncthing --no-browser"
 spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "xhost +SI:localuser:root"
@@ -338,24 +334,15 @@ binds {
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to "sh -c".
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    //Super+Escape hotkey-overlay-title="Lock the Screen: wlogout" { spawn-sh "wlogout --buttons-per-row=2"; }
-    //Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-    //Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun"; }
 
     // Core Noctalia binds
     Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Mod+Alt+C { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Escape { spawn-sh "noctalia msg panel-toggle control-center"; }
     //Mod+Alt+S { spawn-sh "noctalia msg settings-toggle"; }
     Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
+    Mod+Alt+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
 
-
-    // Volume keys
-    //XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    //XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    //XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    //XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-
-    // Audio & Brightness
+    // Noctalia Audio & Brightness
     XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
     XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
     XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
@@ -370,13 +357,6 @@ binds {
     Shift+Down allow-when-locked=true { spawn-sh "mpc toggle"; }
     Shift+Right allow-when-locked=true { spawn-sh "mpc next"; }
     Shift+Left allow-when-locked=true { spawn-sh "mpc prev"; }
-
-
-    // Example brightness key mappings for brightnessctl.
-    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-    // but you need to manually put each argument in separate "" quotes.
-    //XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    //XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     // Launch application keybinds
     Super+Alt+B allow-when-locked=false { spawn "librewolf"; }
