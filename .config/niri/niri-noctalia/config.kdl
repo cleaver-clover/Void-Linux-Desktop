@@ -136,11 +136,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#8B8C9B"
+        // active-color "#7C807A"
 
-        inactive-color "#091E3D"
+        inactive-color "#101212"
 
-        active-gradient from="#807F91" to="#8B8C9B" angle=70
+        active-gradient from="#5B6562" to="#7C807A" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -151,11 +151,11 @@ layout {
         off
 
         width 2
-        active-color "#8B8C9B"
-        inactive-color "#091E3D"
+        active-color "#7C807A"
+        inactive-color "#101212"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#dedcde"
+        urgent-color "#ceccc9"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -214,8 +214,8 @@ spawn-sh-at-startup "xhost +SI:localuser:root"
 
 // Clipboard
 spawn-sh-at-startup "wl-paste --watch"
-spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-sh-at-startup "cliphist wipe"
+// spawn-sh-at-startup "wl-paste --watch cliphist store"
+// spawn-sh-at-startup "cliphist wipe"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -345,7 +345,7 @@ binds {
     // Core Noctalia binds
     Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+Alt+C { spawn-sh "noctalia msg panel-toggle control-center"; }
-    //Mod+Alt+S { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+Alt+S { spawn-sh "noctalia msg settings-toggle"; }
     Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
 
 

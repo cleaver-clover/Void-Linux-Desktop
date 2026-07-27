@@ -72,4 +72,5 @@ end
 
 #----------- PATH -----------
 export PATH="$PATH:$HOME/.local/bin" # needed for appman
-export PATH="$PATH:$HOME/.cago/bin" # needed for cargo (rust) 
+export PATH="$PATH:$HOME/.cago/bin" # needed for cargo (rust)
+export PATH="$PATH:/opt/texlive/2026/bin/x86_64-linux" # needed for texlive tlmgr 

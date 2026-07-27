@@ -1,0 +1,106 @@
+config_version = 7
+
+[bar.default]
+background_opacity = 0.59999998658895493
+border = "surface_variant"
+capsule = true
+center = [ "weather", "clock" ]
+end = [
+    "media",
+    "tray",
+    "notifications",
+    "brightness",
+    "network",
+    "bluetooth",
+    "volume",
+    "input_volume",
+    "battery",
+    "control-center",
+    "session"
+]
+font_family = "JetBrains Mono"
+margin_ends = 0
+radius = 0
+start = [ "launcher", "wallpaper", "workspaces", "audio_visualizer", "ram", "cpu" ]
+
+[hooks]
+wallpaper_changed = "sh ~/.config/scripts/set-noctalia-wallpaper.sh $NOCTALIA_WALLPAPER_PATH"
+
+[location]
+address = "Leiria, Portuga"
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DP-2" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 213.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 889.5
+    output = "DP-2"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+        show_session_buttons = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
+    box_height = 213.0
+    box_width = 810.0
+    cx = 468.0
+    cy = 817.5
+    output = "winit"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+        show_session_buttons = true
+
+[theme]
+source = "wallpaper"
+
+[wallpaper]
+directory = "/home/clover/Imagens/Wallpaper_Shuffle"
+
+    [wallpaper.default]
+    path = "/home/clover/Imagens/Wallpaper_Shuffle/andreas-gucklhorn-mawU2PoJWfU-unsplash.jpg"
+
+    [wallpaper.last]
+    path = "/home/clover/Imagens/Wallpaper_Shuffle/andreas-gucklhorn-mawU2PoJWfU-unsplash.jpg"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/clover/Imagens/Wallpaper_Shuffle/andreas-gucklhorn-mawU2PoJWfU-unsplash.jpg"
+
+[widget.workspaces]
+display = "name"
+labels_only_when_occupied = true

@@ -444,8 +444,15 @@ To compile suckuless utilities enter the `dwm` and `slock` directories and run:
 
 To setup wayland with niri wm install the following programs.
 
+I have updated the config to use [Noctalia](https://noctalia.dev/). To install it on Void see [Noctalia instalation on void](https://docs.noctalia.dev/v5/getting-started/installation/).
+
 ```
-# xbps-install wayland xorg-server-xwayland xwayland-satellite mesa-dri Waybar wlogout niri swaylock swww swayidle wlroots0.19 wl-clipboard cliphist wtype 
+# xbps-install wayland xorg-server-xwayland xwayland-satellite mesa-dri niri wlroots0.19 wl-clipboard cliphist
+
+-- Old wayland configuration:
+# xbps-install Waybar wlogout swaylock awww swayidle 
+
+-- New wayland config: just install noctalia
 
 -- Multiple display configuration (like arandr)
 # xbps-install wdisplays 
