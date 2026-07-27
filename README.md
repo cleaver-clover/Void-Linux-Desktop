@@ -447,7 +447,7 @@ To setup wayland with niri wm install the following programs.
 I have updated the config to use [Noctalia](https://noctalia.dev/). To install it on Void see [Noctalia instalation on void](https://docs.noctalia.dev/v5/getting-started/installation/).
 
 ```
-# xbps-install wayland xorg-server-xwayland xwayland-satellite mesa-dri niri wlroots0.19 wl-clipboard cliphist
+# xbps-install wayland xorg-server-xwayland xwayland-satellite mesa-dri niri wlroots0.19 wl-clipboard
 
 -- Old wayland configuration:
 # xbps-install Waybar wlogout swaylock awww swayidle 

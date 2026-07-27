@@ -136,11 +136,11 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // active-color "#626569"
+        // active-color "#8B5A51"
 
-        inactive-color "#0B1B1D"
+        inactive-color "#0f121a"
 
-        active-gradient from="#214C60" to="#626569" angle=70
+        active-gradient from="#645F5D" to="#8B5A51" angle=70
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -151,11 +151,11 @@ layout {
         off
 
         width 2
-        active-color "#626569"
-        inactive-color "#0B1B1D"
+        active-color "#8B5A51"
+        inactive-color "#0f121a"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#d3d1da"
+        urgent-color "#cdc7bf"
 
         // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
@@ -209,9 +209,9 @@ spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "xhost +SI:localuser:root"
 
 // Clipboard
-spawn-sh-at-startup "wl-paste --watch"
-spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-sh-at-startup "cliphist wipe"
+//spawn-sh-at-startup "wl-paste --watch"
+//spawn-sh-at-startup "wl-paste --watch cliphist store"
+//spawn-sh-at-startup "cliphist wipe"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.

@@ -216,9 +216,9 @@ spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "xhost +SI:localuser:root"
 
 // Clipboard
-spawn-sh-at-startup "wl-paste --watch"
-spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-sh-at-startup "cliphist wipe"
+//spawn-sh-at-startup "wl-paste --watch"
+//spawn-sh-at-startup "wl-paste --watch cliphist store"
+//spawn-sh-at-startup "cliphist wipe"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
