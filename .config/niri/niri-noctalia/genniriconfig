@@ -214,6 +214,7 @@ spawn-at-startup "gammastep"
 spawn-sh-at-startup "syncthing --no-browser"
 spawn-sh-at-startup "exec /usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "xhost +SI:localuser:root"
+spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects -w"
 
 // Clipboard
 //spawn-sh-at-startup "wl-paste --watch"
