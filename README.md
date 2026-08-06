@@ -131,10 +131,10 @@ Copy the RSA keys from the installation medium to the target root directory.
 
 ### Void Linux installation and setup with chroot
 
-For EFI systems using the main glibc repo, this is the install command plus neovim to help edit some files, and dbus, stubby and NetworkManager to access to an internet connection.
+For EFI systems using the main glibc repo, this is the install command plus neovim to help edit some files, dbus, stubby and NetworkManager to access to an internet connection.
 
 ```
-# xbps-install -Sy -R https://repo-default.voidlinux.org/current -r /mnt base-system cryptsetup grub-x86_64-efi lvm2 neovim NetworkManager dbus dbus-glib
+# xbps-install -Sy -R https://repo-default.voidlinux.org/current -r /mnt base-system cryptsetup grub-x86_64-efi lvm2 neovim NetworkManager dbus dbus-glib stubby
 ```
 
 Generate fstab (Filesystem Configuration).
@@ -267,7 +267,7 @@ If this is not set there will be no connection made. Void Linux configures `/etc
 ```
 # resolvconf -u
 ```
-
+If you want to make change the servers edit `/etc/resolvconf.conf ` and ther run the command above.
 Then the `/etc/resolv.conf ` should have:
 
 ```

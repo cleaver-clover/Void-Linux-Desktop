@@ -1,4 +1,4 @@
-config_version = 7
+config_version = 8
 
 [bar.default]
 background_opacity = 0.59999998658895493
@@ -78,7 +78,6 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DP-2", "loc
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = false
         show_session_buttons = false
 
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
@@ -101,7 +100,6 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@DP-2", "loc
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
         show_session_buttons = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
