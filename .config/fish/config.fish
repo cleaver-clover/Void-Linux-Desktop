@@ -70,6 +70,52 @@ function gcode-alias
         -o "$output_file"
 end
 
+function start-ai-workspace
+	# Setup: Install odysseus (without docker) and ollama
+	# Search ollama models at https://ollama.com/library
+
+    # Define the absolute path to your local Odysseus repository
+    set -l ODYSSEUS_DIR "$HOME/Documentos/odysseus/"
+
+	echo "Starting local AI stack infrastructure..."
+
+    # Check if the Ollama daemon is already running; if not, initialize it in the background
+    if not pgrep -x "ollama" > /dev/null
+        echo "Initializing Ollama server process..."
+        ollama serve &
+    else
+        echo "Ollama server process detected. Skipping initialization."
+    end
+
+    # Block execution until the Ollama API gateway becomes responsive
+    echo "Verifying Ollama API service availability..."
+    while not curl -s http://localhost:11434 > /dev/null
+        sleep 1
+    end
+    echo "Ollama API service is operational."
+
+    # Validate the existence of the specified Odysseus directory
+    if not test -d $ODYSSEUS_DIR
+        echo "Error: Directory $ODYSSEUS_DIR does not exist. Please update the path in the script."
+        return 1
+    end
+
+    # Navigate to the target directory
+    cd $ODYSSEUS_DIR
+
+    # Verify the presence of the virtual environment executable
+    if not test -f venv/bin/python
+        echo "Error: Python executable not found at venv/bin/python."
+        echo "Please ensure your virtual environment is named 'venv' and correctly configured."
+        return 1
+    end
+
+    # Execute the application server using the virtual environment's specific binary
+    echo "Launching Odysseus application server via virtual environment..."
+    ./venv/bin/python -m uvicorn app:app --host 127.0.0.1 --port 7000
+end
+
+
 #----------- PATH -----------
 export PATH="$PATH:$HOME/.local/bin" # needed for appman
 export PATH="$PATH:$HOME/.cago/bin" # needed for cargo (rust)
